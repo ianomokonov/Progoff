@@ -23,6 +23,9 @@ import { MainHeadComponent } from './main-head/main-head.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { PricesComponent } from './prices/prices.component';
 import { SaleSetsComponent } from './sale-sets/sale-sets.component';
+import { AboutComponent } from './about/about.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { SaleSetsComponent } from './sale-sets/sale-sets.component';
     MainHeadComponent,
     ProjectsComponent,
     PricesComponent,
-    SaleSetsComponent
+    SaleSetsComponent,
+    AboutComponent,
+    ClientsComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

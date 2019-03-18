@@ -1,20 +1,23 @@
-<div class="d-flex flex-column justify-content-between" style="height: 100vh;">
-  <div class="logo">
-    <h2>Progoff</h2>
+<div class="d-flex flex-column justify-content-between main" style="height: 100vh;">
+  <div class="logo" >
+    <h2 (click)="go('/')">Progoff</h2>
     <p>Компания разработки сайтов</p>
   </div>
-  <div class="menu">
-    <div class="menu-item">
-      <span>Text</span>
+  <div class="menu" >
+    <div class="menu-item" (click)="go('/about')">
+      <span>О компании</span>
     </div>
-    <div class="menu-item">
-      <span>Text</span>
+    <div class="menu-item" (click)="go('/clients')">
+      <span>Портфолио</span>
     </div>
-    <div class="menu-item">
-      <span>Text</span>
+    <div class="menu-item" (click)="go('/prices')">
+      <span>Цены</span>
     </div>
-    <div class="menu-item">
-      <span>Text</span>
+    <div class="menu-item" (click)="go('/sale-sets')">
+      <span>Пакеты услуг</span>
+    </div>
+    <div class="menu-item" (click)="go('/contacts')">
+      <span>Контакты</span>
     </div>
     <div class="social-nets">
       <i class="fab fa-vk"></i>
