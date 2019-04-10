@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   CurrentYear = new Date().getFullYear();
+  showMap = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeMap(){
+    this.showMap = !this.showMap;
   }
 
 }

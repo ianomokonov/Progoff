@@ -26,6 +26,8 @@ import { SaleSetsComponent } from './sale-sets/sale-sets.component';
 import { AboutComponent } from './about/about.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { MainAboutComponent } from './main-about/main-about.component';
+import { ApplicationFormComponent } from './application-form/application-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ContactsComponent } from './contacts/contacts.component';
     SaleSetsComponent,
     AboutComponent,
     ClientsComponent,
-    ContactsComponent
+    ContactsComponent,
+    MainAboutComponent,
+    ApplicationFormComponent
   ],
   imports: [
     BrowserModule,

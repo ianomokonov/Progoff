@@ -45,3 +45,78 @@
         }
     }
 }
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span{
+        color:rgb(223, 72, 46)
+    }
+}
+.close-map{
+    
+    right: auto !important;
+    left: 98% !important;
+    
+}
+.contacts{
+
+    h3:first-child{
+        color:rgb(223, 72, 46)
+    }
+    h2{
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    position: absolute;
+    top:10px;
+    left: 40%;
+    transition: 0.7s !important;
+    padding: 20px 40px;
+    box-shadow: 1px 2px 5px rgb(75, 75, 75);
+    background-color: #fff;
+    width: 700px;
+    .close-btn{
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 35px;
+        height: 200px;
+        padding: 8px;
+        border-radius: 10px 0 0 10px;
+
+        left:-35px;
+        background-color: #fff;
+        box-shadow: -1px -2px 5px #4b4b4b;;
+        z-index: 10;
+
+        &:hover{
+            background-color: rgb(221, 221, 221);
+            cursor: pointer;
+        }
+
+        span{
+            font-size: 18px;
+            transform: rotate(-90deg);
+            display: block;
+            white-space: nowrap;
+            
+        }
+    }
+}
+.map{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 70px 0;
+    margin: 50px 0;
+}
