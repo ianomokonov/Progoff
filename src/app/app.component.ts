@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Progoff';
+  show = false;
+
+  showMenu(){
+    this.show = !this.show;
+  }
 }

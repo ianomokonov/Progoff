@@ -56,9 +56,7 @@
     }
 }
 .close-map{
-    
-    right: auto !important;
-    left: 98% !important;
+    right: -710px !important;
     
 }
 .contacts{
@@ -76,12 +74,13 @@
     margin: 10px;
     position: absolute;
     top:10px;
-    left: 40%;
+    right: 30px;
     transition: 0.7s !important;
     padding: 20px 40px;
     box-shadow: 1px 2px 5px rgb(75, 75, 75);
     background-color: #fff;
-    width: 700px;
+    min-width: 700px;
+    min-height: 482px;
     .close-btn{
         position: absolute;
         display: inline-flex;
@@ -119,4 +118,36 @@
     position: relative;
     padding: 70px 0;
     margin: 50px 0;
+}
+
+@media(max-width:992px){
+    .contacts{
+        min-width: 370px !important;
+        .form{
+            display: none;
+        }
+    }
+    .close-map{
+        right: -400px !important;
+    }
+}
+
+@media(max-width:768px){
+    .contacts{
+        display: none;
+    }
+    .end{
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+    }
+    .col-sm-4{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        margin-bottom: 20px;
+    }
+    .map{
+        padding: 0 !important;
+    }
 }

@@ -10,6 +10,7 @@
     .sale-head{
         font-size: 50px;
         font-weight: 300;
+
         text-transform: uppercase;
         margin-bottom: 5px;
     }
@@ -29,6 +30,9 @@
     width: 20px;
     position: relative;
     overflow: hidden;
+}
+.body{
+    width: 50%;
 }
 // .carousel-next{
     
@@ -60,14 +64,6 @@
 // }
 
 @media(max-width:630px){
-    .carousel-next{
-    
-        &::before, &::after{
-            background-color: rgb(61, 69, 190);
-            right: 0;
-        }
-    
-    }
     .sale-head{
         font-size: 10vw !important;
     }
@@ -76,5 +72,32 @@
     }
     .carousel-item{
         height: unset
+    }
+}
+
+@media(max-width:768px){
+    .sale-sm-head{
+        display: none;
+    }
+    .body{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        margin-top: 10px !important;
+
+
+        width: 100% !important;
+
+        div{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .sale-head{
+        white-space: nowrap;
+        text-align: center;
+        font-size: 15px !important;
     }
 }

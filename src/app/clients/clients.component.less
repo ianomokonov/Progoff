@@ -17,7 +17,7 @@
 
         .photoes{
             position: relative;
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
             height: 60vh;
@@ -64,4 +64,24 @@
             align-items: center;
         }
     }
+}
+
+@media(max-width:992px){
+    .left, .right{
+        display: none !important;
+    }
+    .photoes{
+        height: 50vh !important;
+    }
+}
+
+@media(max-width:768px){
+    .main{
+        width: 100% !important;
+        position: unset !important;
+    }
+    .photoes{
+        height: auto !important;
+    }
+
 }
