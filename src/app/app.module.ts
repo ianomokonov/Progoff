@@ -36,6 +36,7 @@ import { AdvantagesComponent } from './advantages/advantages.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { MateInfoComponent } from './mate-info/mate-info.component';
 import { SaleSetsMainComponent } from './sale-sets-main/sale-sets-main.component';
+import { ProcessComponent } from './process/process.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { SaleSetsMainComponent } from './sale-sets-main/sale-sets-main.component
     AdvantagesComponent,
     JobsComponent,
     MateInfoComponent,
-    SaleSetsMainComponent
+    SaleSetsMainComponent,
+    ProcessComponent
   ],
   imports: [
     BrowserModule,
