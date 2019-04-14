@@ -15,6 +15,8 @@ export class Client extends IdNameDescription{
 
 export class Sale extends IdNameDescription{
   Image:string;
+  Discount:number;
+  Services:Service[];
 }
 
 export class Mate extends IdNameDescription{
@@ -25,4 +27,8 @@ export class Mate extends IdNameDescription{
 
 export class Job extends IdNameDescription{
   Requirements:string[];
+}
+
+export class Service extends IdNameDescription{
+  Price:number;
 }

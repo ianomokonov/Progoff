@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'main-menu',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router:Router, public ms:ModalService) { }
 
   ngOnInit() {
   }

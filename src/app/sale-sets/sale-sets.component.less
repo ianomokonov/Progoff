@@ -1,103 +1,62 @@
-.section-container{
-    border-bottom: none;
-    height: auto;
-}
-.carousel-item{
-    
-    
-    padding: 10px;
-    padding-bottom: 40px;
-    .sale-head{
-        font-size: 50px;
-        font-weight: 300;
+@import '../../colors.less';
 
-        text-transform: uppercase;
-        margin-bottom: 5px;
-    }
-    .sale-sm-head{
-        margin-top: 0;
+.main-container{
+    justify-content: space-between;
 
-    }
-}
-.carousel-inner{
-    padding: 0 40px;
-}
-.carousel{
-    background:transparent;
-}
-.carousel-next, .carousel-prev{
-    height: 100px;
-    width: 20px;
-    position: relative;
-    overflow: hidden;
-}
-.body{
-    width: 50%;
-}
-// .carousel-next{
-    
-//     &::before, &::after{
-//         background-color: rgb(245, 245, 245);
-//         right: 0;
-//     }
-//     &::before{
-//         transform: rotate(-25deg);
-//     }
-//     &::after{
-//         transform: rotate(25deg);
-//     }
-
-// }
-// .carousel-prev{
-    
-//     &::before, &::after{
-//         background-color: rgb(61, 69, 190);
-//         left: 0;
-//     }
-//     &::before{
-//         transform: rotate(-25deg);
-//     }
-//     &::after{
-//         transform: rotate(25deg);
-//     }
-
-// }
-
-@media(max-width:630px){
-    .sale-head{
-        font-size: 10vw !important;
-    }
-    .sale-sm-head{
-        font-size: 8vw;
-    }
-    .carousel-item{
-        height: unset
+    .card{
+        background-color: transparent;
+        padding: 15px;
+        color: white;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 45%;
+        min-width: 300px;
+        max-width: 600px;
+        border: none;
+        transition: 0.3s;
+        cursor: default;
+        overflow: hidden;
+        &:hover{
+            background-color: @bg-prog-light;
+            .price{
+                left: 0;
+            }
+            .btn{
+                margin-left: 120px;
+            }
+        }
+        .price{
+            transition: 0.3s;
+            width: 120px;
+            position: absolute;
+            left:-120px;
+        }
+        .btn{
+            transition: 0.3s;
+        }
     }
 }
 
 @media(max-width:768px){
-    .sale-sm-head{
-        display: none;
+    .price{
+        position: unset !important;
+        margin-bottom: 5px;
     }
-    .body{
-        display: flex;
+    .d-flex{
         flex-direction: column;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 0 !important;
-        margin-top: 10px !important;
-
-
+        align-items: flex-start !important;
+    }
+    .card{
+        margin-right: 0 !important;
         width: 100% !important;
-
-        div{
-            display: flex;
-            justify-content: center;
+        &:hover{
+            .btn{
+                margin-left: 0 !important;
+            }
+        }
+        .card-body{
+            padding-left: 0;
         }
     }
-    .sale-head{
-        white-space: nowrap;
-        text-align: center;
-        font-size: 15px !important;
-    }
+    
 }

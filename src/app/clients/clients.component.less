@@ -20,14 +20,16 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            height: 60vh;
+            height: 30vw;
             width: 100%;
+            min-height: 276px;
             
             .photo{
                 position: absolute;
             }
             .main{
-                width: 50%;
+                height: 25vw;
+                min-height: 260px;
                 z-index: 20;
                 &:hover{
                     &~.left{
@@ -41,7 +43,8 @@
             .left, .right{
                 transition: 0.3s;
                 z-index: 10;
-                height: 80%;
+                height: 20vw;
+                min-height: 208px;
                 width: 25%;
             }
             .left{
@@ -70,18 +73,18 @@
     .left, .right{
         display: none !important;
     }
-    .photoes{
-        height: 50vh !important;
-    }
 }
 
 @media(max-width:768px){
     .main{
         width: 100% !important;
+        height: auto !important;
         position: unset !important;
+        min-height: 0 !important;
     }
     .photoes{
         height: auto !important;
+        min-height: 0 !important;
     }
 
 }

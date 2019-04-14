@@ -16,6 +16,8 @@ import { ModalService } from './services/modal.service';
 
 //HTTP запросы
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+//Компоненты
 import { FooterComponent } from './footer/footer.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -33,6 +35,7 @@ import { TeamComponent } from './team/team.component';
 import { AdvantagesComponent } from './advantages/advantages.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { MateInfoComponent } from './mate-info/mate-info.component';
+import { SaleSetsMainComponent } from './sale-sets-main/sale-sets-main.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { MateInfoComponent } from './mate-info/mate-info.component';
     TeamComponent,
     AdvantagesComponent,
     JobsComponent,
-    MateInfoComponent
+    MateInfoComponent,
+    SaleSetsMainComponent
   ],
   imports: [
     BrowserModule,
