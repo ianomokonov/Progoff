@@ -1,0 +1,57 @@
+@import "../../colors.less";
+.sections{
+    width: 25%;
+    .section{
+        height: 60px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding-left: 10px;
+        border-left: 3px solid white;
+        transition: 0.3s;
+        &:hover{
+            border-left-color: @blue-color;  
+            cursor: pointer;
+        }
+        &.active{
+            border-left-color: @blue-color;  
+        }
+    }
+}
+.section-content{
+    width: 75%;
+    color: white;
+    padding: 0 20px;
+    border-right:3px solid white;
+    margin-right: -3px;
+}
+
+@media(max-width:768px){
+    .d-flex{
+        flex-direction: column-reverse;
+
+        .section-content{
+            border: none;
+            margin: 0;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        .sections{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100% !important;
+            margin-bottom: 10px;
+            .section{
+                border: none;
+                justify-content: center;
+                &.active{
+                    border: 3px solid @blue-color;
+                }
+            }
+        }
+        
+
+    }
+}

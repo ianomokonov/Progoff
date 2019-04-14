@@ -28,6 +28,11 @@ import { ClientsComponent } from './clients/clients.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MainAboutComponent } from './main-about/main-about.component';
 import { ApplicationFormComponent } from './application-form/application-form.component';
+import { AboutBodyComponent } from './about-body/about-body.component';
+import { TeamComponent } from './team/team.component';
+import { AdvantagesComponent } from './advantages/advantages.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { MateInfoComponent } from './mate-info/mate-info.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { ApplicationFormComponent } from './application-form/application-form.co
     ClientsComponent,
     ContactsComponent,
     MainAboutComponent,
-    ApplicationFormComponent
+    ApplicationFormComponent,
+    AboutBodyComponent,
+    TeamComponent,
+    AdvantagesComponent,
+    JobsComponent,
+    MateInfoComponent
   ],
   imports: [
     BrowserModule,

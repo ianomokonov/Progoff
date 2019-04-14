@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(public router:Router) { }
 
   ngOnInit() {
   }
@@ -17,7 +17,6 @@ export class MainMenuComponent implements OnInit {
    * Переход на другую страницу
    */
   go(target:string){
-    console.log(target)
     this.router.navigate([target]);
   }
 

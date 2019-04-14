@@ -1,0 +1,18 @@
+<div class="d-flex">
+  <div class=" section-content">
+    <team *ngIf="curSection==0"></team>
+    <advantages *ngIf="curSection==1"></advantages>
+    <jobs *ngIf="curSection==2"></jobs>
+  </div>
+  <div class=" sections">
+    <div [ngClass]="{'active':curSection==0}" class="section" (click)="showSection(0)">
+      <span>Команда</span>
+    </div>
+    <div [ngClass]="{'active':curSection==1}" class="section" (click)="showSection(1)">
+      <span>Приемущества</span>
+    </div>
+    <div [ngClass]="{'active':curSection==2}" class="section" (click)="showSection(2)">
+      <span>Вакансии</span>
+    </div>
+  </div>
+</div>

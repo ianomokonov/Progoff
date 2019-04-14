@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="mate" *ngFor="let m of team">
+    <div>
+      <h4>{{m.Name}}</h4>
+      <small>{{m.Position}}</small>
+      <div>
+        <a class="p-link" href="{{m.VK}}" target="blank"><i class="fab fa-vk"></i></a>
+        <a class="p-link" href="{{m.Instagram}}"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <button class="btn btn-prog" (click)="show(m)">Подробнее</button>
+  </div>
+
+</div>

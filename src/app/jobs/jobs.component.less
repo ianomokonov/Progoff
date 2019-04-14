@@ -1,0 +1,74 @@
+@import "../../colors.less";
+a:hover{
+    text-decoration: none;
+}
+.job{
+    max-height: 70px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+    transition: 0.3s;
+    margin: 0 0 20px 0;
+    cursor: pointer;
+    h3{
+        line-height: 70px;
+        margin: 0;
+    }
+
+
+    span{
+        position: absolute;
+        display: block;
+        transition: 0.3s;
+        background-color: @blue-color;
+        height: 3px;
+        width: 3px;
+        &:nth-of-type(1){
+            top: 0;
+            right: 0;
+            width: 20px !important;
+        }
+    
+        &:nth-of-type(2){
+            top: 0;
+            right: 0;
+            height: 20px !important;
+        }
+    
+        &:nth-of-type(3){
+            bottom: 0;
+            left: 0;
+            width: 20px !important;
+        }
+    
+        &:nth-of-type(4){
+            bottom: 0;
+            left: 0;
+            height: 20px !important;
+        }
+    }
+
+    &:hover{
+        span{
+            &:nth-of-type(1){
+                width: 100% !important;
+            }
+        
+            &:nth-of-type(2){
+                height: 100% !important;
+            }
+        
+            &:nth-of-type(3){
+                width: 100%!important;
+            }
+        
+            &:nth-of-type(4){
+                height: 100% !important;
+            }
+        }
+    }
+
+    &.active{
+        max-height: 1000px;
+    }
+}
