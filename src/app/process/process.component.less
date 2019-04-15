@@ -6,19 +6,37 @@ h2{
 }
 .process{
     .stage{
+        cursor: default;
         padding: 100px 0;
         position: relative;
-        .image{
+        display: flex;
+        align-items: center;
+        height: 350px;
+        .process-content{
+            margin-left: 170px;
             display: inline-block;
+            color: white;
+            position: relative;
+            left:-30px;
+            opacity: 0;
+            transition: 0.6s;
+            &.active{
+                opacity: 1;
+                left: 0;
+            }
+        }
+        .image{
+            display: block;
             border-radius: 50%;
             width: 150px;
             height: 150px;
             border: 3px solid white;
-            position: relative;
+            position: absolute;
             z-index: 10;
             .back-container{
 
                 position: absolute;
+                max-height: 150px !important;
                 width: 150px;
                 top: -1px;
                 left: -1px;
@@ -48,6 +66,7 @@ h2{
             left:74px;
             height: 0;
             width: 3px;
+            max-height: 206px;
             background-color: #fff;
             z-index: 2;
         }
@@ -61,6 +80,26 @@ h2{
             width: 3px;
             
             background-color: rgb(114, 114, 114);
+        }
+    }
+}
+
+@media(max-width:768px){
+    .process-content{
+        position: absolute !important;
+        left: 0 !important;
+        background-color: #fff;
+        color: black !important;
+        padding: 10px;
+        z-index: 10;
+        margin: 0 !important;
+        top: 300px;
+        p{
+            display: none;
+        }
+        &.active{
+            opacity: 1;
+            left: 10px !important;
         }
     }
 }

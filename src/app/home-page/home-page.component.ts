@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 
 @Component({
@@ -7,7 +7,20 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./home-page.component.less']
 })
 export class HomePageComponent implements OnInit {
+  show = false;
+  @HostListener('document:scroll', [])
+            onScroll(): void {
+              let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
+              if(y.height+(y.top-800)<0){
+                this.show=true;
+              }else{
+                this.show=false;
+              }
+              
+              
+              
 
+            }
   constructor(public ms:ModalService) { }
 
   ngOnInit() {

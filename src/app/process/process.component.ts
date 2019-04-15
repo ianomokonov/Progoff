@@ -6,58 +6,43 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./process.component.less']
 })
 export class ProcessComponent implements OnInit {
-  firstOffset = 0;
+  firstOffset = 300;
   curLevel = 0;
   readyFill = 0;
   sizes = [0,0,0,0,0,0,0,0,0,0,0,0,0]
   ss = [150,206,150,206,150,206,150,206,150,206,150,206,150]
+  sum:number;
   @HostListener('document:scroll', [])
             onScroll(): void {
-              let y = window.pageYOffset;
-              console.log(y);
-              console.log(this.firstOffset);
-              if(y>5000 && y<5500){
-                this.firstOffset = 5000;
-              }
-              if(this.firstOffset!=0){
-                if(y-this.firstOffset-this.readyFill>0){
-                  if(y-this.firstOffset>this.readyFill+this.ss[this.curLevel]){
-                    this.readyFill+=this.ss[this.curLevel];
-                    this.sizes[this.curLevel]=this.ss[this.curLevel];
-                    this.curLevel+=this.curLevel+1<13?1:0;
-                    console.log(111)
-                  }else{
-                    if(this.sizes[12]!=150){
-                      this.sizes[this.curLevel]=y-this.firstOffset-this.readyFill;
-                    }
-                    
-                  }
-                  //console.log(this.sizes)
-                  
-                }else{
-                  if(y-this.firstOffset<this.readyFill-this.ss[this.curLevel]){
-                    this.readyFill-=this.ss[this.curLevel];
-                    this.sizes[this.curLevel]=0;
-                    this.curLevel-=this.curLevel-1>-1?1:0;
-                  }else{
-                    if(this.sizes[0]>-1){
-                      this.sizes[this.curLevel]=y-this.firstOffset-(this.readyFill-this.ss[this.curLevel]);
-                    }else{
-                      console.log(this.sizes);
-                      this.firstOffset = 0;
-                    }
-                  }
-                  
+              let y = document.getElementsByClassName("process")[0].getBoundingClientRect().top;
+              if(y<this.firstOffset){
+                if(this.firstOffset-y>this.ss[this.curLevel]+this.readyFill){
+                  this.sizes[this.curLevel]=this.ss[this.curLevel];
+                  this.readyFill+=this.ss[this.curLevel];
+                  this.curLevel++;
+                }
+                if(this.firstOffset-y>this.sum){
+                  this.sizes[this.curLevel]=this.firstOffset-y-this.readyFill;
                 }
                 
-                
               }
+              else{
+                this.sizes=[0,0,0,0,0,0,0,0,0,0,0,0,0];
+                this.readyFill = 0;
+                this.curLevel = 0;
+              }
+              
+              
 
             }
   constructor() { }
 
   ngOnInit() {
-    console.log( document.getElementsByClassName("process")[0].getBoundingClientRect());
+    window.scrollTo(0, 0)
+    this.sum = 0;
+    this.sizes.forEach(s => {
+      this.sum+=s;
+    })
   }
 
 }

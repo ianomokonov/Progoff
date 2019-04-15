@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="mate" *ngFor="let m of team">
+  <div class="mate" [ngClass]="{'active':showp}" *ngFor="let m of team">
     <div>
       <h4>{{m.Name}}</h4>
       <small>{{m.Position}}</small>

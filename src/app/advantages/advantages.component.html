@@ -1,5 +1,5 @@
 <div class="main-container">
   <div class="advantage" *ngFor="let a of advs">
-    {{a}}
+    <span [ngClass]="{'active':show}">{{a}}</span>
   </div>
 </div>

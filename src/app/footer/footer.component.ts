@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   CurrentYear = new Date().getFullYear();
-  showMap = true;
+  showMap = false;
+  @HostListener('document:scroll', [])
+  onScroll(): void {
+    let y = document.getElementsByClassName("map")[0].getBoundingClientRect().top;
+    if(y<window.innerHeight-200){
+      this.showMap=true;
+    }
+    
+    
+    
+
+  }
   constructor() { }
 
   ngOnInit() {

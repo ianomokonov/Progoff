@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 
 @Component({
   selector: 'advantages',
   templateUrl: './advantages.component.html',
   styleUrls: ['./advantages.component.less']
 })
-export class AdvantagesComponent implements OnInit {
-
+export class AdvantagesComponent implements OnInit{
+  show = false;
   advs:string[] = [
     "Предоставляем высокое качество по низким ценам",
     "Проводим исследования, чтобы лучше понять Ваш бизнес",
@@ -17,6 +17,9 @@ export class AdvantagesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.show = true;
+    },1)
   }
 
 }

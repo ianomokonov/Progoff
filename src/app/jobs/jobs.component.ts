@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Job } from '../services/models';
 import { fillProperties } from '@angular/core/src/util/property';
 
@@ -8,7 +8,7 @@ import { fillProperties } from '@angular/core/src/util/property';
   styleUrls: ['./jobs.component.less']
 })
 export class JobsComponent implements OnInit {
-  curJob = 0;
+  curJob = -1;
   jobs:Job[] = [
     {
       Id:1,
@@ -50,8 +50,12 @@ export class JobsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.curJob = 0;
+    },1)
   }
   show(i){
+    console.log(11)
     this.curJob = i;
   }
 

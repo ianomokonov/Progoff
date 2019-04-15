@@ -8,6 +8,7 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./team.component.less']
 })
 export class TeamComponent implements OnInit {
+  showp = false;
   team:Mate[] = [
     {
       Id:1,
@@ -45,6 +46,9 @@ export class TeamComponent implements OnInit {
   constructor( private ms:ModalService) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.showp = true;
+    },1)
   }
 
   show(m:Mate){

@@ -1,7 +1,7 @@
 <main-head></main-head>
 <main-about></main-about>
 <clients></clients>
-<div class="section-container">
+<div class="section-container" [ngClass]="{'active':show}">
     <h2>Появились вопросы?</h2>
     <p>Отправьте заявку и мы свяжемся с вами в ближайшее время.</p>
     <button class="btn btn-primary" (click)="ms.open('app')">Оставить заявку</button>

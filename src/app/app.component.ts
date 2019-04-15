@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  constructor(){
+    window.scrollTo(0, 0)
+  }
   title = 'Progoff';
   show = false;
+  
 
   showMenu(){
+    
     this.show = !this.show;
   }
 }
