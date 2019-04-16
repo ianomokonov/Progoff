@@ -10,16 +10,11 @@ export class MainAboutComponent implements OnInit {
   @HostListener('document:scroll', [])
             onScroll(): void {
               let y = document.getElementsByClassName("about")[0].getBoundingClientRect().top;
-              console.log(y);
               if(Math.abs(y)<window.innerHeight-200){
                 this.show=true;
               }else{
                 this.show=false;
               }
-              
-              
-              
-
             }
 
   constructor() { }

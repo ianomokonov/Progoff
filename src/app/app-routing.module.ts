@@ -6,6 +6,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { PricesComponent } from './prices/prices.component';
 import { SaleSetsComponent } from './sale-sets/sale-sets.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ClientComponent } from './client/client.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'clients', component: ClientsComponent},
   { path: 'prices', component: PricesComponent},
   { path: 'sale-sets', component: SaleSetsComponent},
+  { path: 'client/:id', component: ClientComponent },
   //{ path: 'contacts', component: ContactsComponent}
 ];
 

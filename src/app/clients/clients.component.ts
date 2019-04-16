@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../services/models';
+import { ClientService } from '../services/client.service';
+import { csLocale } from 'ngx-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'clients',
@@ -7,51 +10,16 @@ import { Client } from '../services/models';
   styleUrls: ['./clients.component.less']
 })
 export class ClientsComponent implements OnInit {
-  clients:Client[] = [
-    {
-      Id:1,
-      Name:"Тракторы",
-      Description:"Тракторы правят миром",
-      MainImage:"../../assets/images/traktor.jpg",
-      LeftImage:"../../assets/images/maket1.jpg",
-      RightImage:"../../assets/images/maket2.jpg",
-    },
-    {
-      Id:1,
-      Name:"Тракторы",
-      Description:"Тракторы правят миром",
-      MainImage:"../../assets/images/traktor.jpg",
-      LeftImage:"../../assets/images/maket1.jpg",
-      RightImage:"../../assets/images/maket2.jpg",
-    },
-    {
-      Id:1,
-      Name:"Тракторы",
-      Description:"Тракторы правят миром",
-      MainImage:"../../assets/images/traktor.jpg",
-      LeftImage:"../../assets/images/maket1.jpg",
-      RightImage:"../../assets/images/maket2.jpg",
-    },
-    {
-      Id:1,
-      Name:"Тракторы",
-      Description:"Тракторы правят миром",
-      MainImage:"../../assets/images/traktor.jpg",
-      LeftImage:"../../assets/images/maket1.jpg",
-      RightImage:"../../assets/images/maket2.jpg",
-    },
-    {
-      Id:1,
-      Name:"Тракторы",
-      Description:"Тракторы правят миром",
-      MainImage:"../../assets/images/traktor.jpg",
-      LeftImage:"../../assets/images/maket1.jpg",
-      RightImage:"../../assets/images/maket2.jpg",
-    }
-  ]
-  constructor() { }
+  clients:Client[];
+  constructor(private cs:ClientService, private router:Router) { 
+    this.clients = cs.clients;
+  }
 
   ngOnInit() {
+    this.cs.clients = this.clients;
+  }
+  go(target:string){
+    this.router.navigate([target]);
   }
 
 }

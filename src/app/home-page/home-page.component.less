@@ -1,33 +1,16 @@
 .section-container{
     background-image: url(../../assets/images/delimitter.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: none;
-    &::before{
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        background-color:rgba(0, 0, 0, 0.336);
-        z-index: 10;
-    }
     h2, p, button{
-        text-align: center;
-        position: relative;
-        z-index: 20;
-        color: white;
         left:-100px;
         opacity: 0;
-        transition: 1s;
     }
+    
+    
     h2{
         transition-delay: 0.1s;
     }

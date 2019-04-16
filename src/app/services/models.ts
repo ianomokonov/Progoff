@@ -9,8 +9,11 @@ export class Client extends IdNameDescription{
   MainImage:string;
   LeftImage:string;
   RightImage:string;
+  Link:string;
   Model?:string;
+  Logo?:string;
   CreateDate?:Date;
+  LongDescription?:string;
 }
 
 export class Sale extends IdNameDescription{

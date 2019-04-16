@@ -37,6 +37,9 @@ import { JobsComponent } from './jobs/jobs.component';
 import { MateInfoComponent } from './mate-info/mate-info.component';
 import { SaleSetsMainComponent } from './sale-sets-main/sale-sets-main.component';
 import { ProcessComponent } from './process/process.component';
+import { ClientComponent } from './client/client.component';
+import { ClientService } from './services/client.service';
+import { SameClientsComponent } from './same-clients/same-clients.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,9 @@ import { ProcessComponent } from './process/process.component';
     JobsComponent,
     MateInfoComponent,
     SaleSetsMainComponent,
-    ProcessComponent
+    ProcessComponent,
+    ClientComponent,
+    SameClientsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,7 @@ import { ProcessComponent } from './process/process.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FormBuilder, HttpClient, ModalService, BsModalService],
+  providers: [FormBuilder, HttpClient, ModalService, BsModalService, ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
