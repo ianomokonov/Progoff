@@ -6,7 +6,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./process.component.less']
 })
 export class ProcessComponent implements OnInit {
-  firstOffset = 300;
+  firstOffset = 700;
   curLevel = 0;
   readyFill = 0;
   sizes = [0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -38,6 +38,7 @@ export class ProcessComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.firstOffset = window.innerHeight-300;
     window.scrollTo(0, 0)
     this.sum = 0;
     this.sizes.forEach(s => {

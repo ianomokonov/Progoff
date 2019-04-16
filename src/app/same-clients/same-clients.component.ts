@@ -15,9 +15,22 @@ export class SameClientsComponent implements OnInit {
   ngOnInit() {
     
     if(this.curClientId>0){
-      this.clients = this.cut(Math.ceil((this.cs.clients.length-1)/3), this.cs.clients.filter(x => x.Id != this.curClientId));
+      if(this.cs.clients.length == 5){
+        this.clients[0]= [this.cs.clients[0], this.cs.clients[3]];
+        this.clients[1]= [this.cs.clients[1]];
+        this.clients[2]=[this.cs.clients[2]];
+      }else{
+        this.clients = this.cut(Math.ceil((this.cs.clients.length-1)/3), this.cs.clients.filter(x => x.Id != this.curClientId));
+      }
+      
     }else{
-      this.clients = this.cut(Math.ceil((this.cs.clients.length)/3), this.cs.clients);
+      if(this.cs.clients.length == 5){
+        this.clients[0]= [this.cs.clients[0], this.cs.clients[3]];
+        this.clients[1]= [this.cs.clients[1]];
+        this.clients[2]=[this.cs.clients[2]];
+      }else{
+        this.clients = this.cut(Math.ceil((this.cs.clients.length)/3), this.cs.clients);
+      }
     }
   }
 
