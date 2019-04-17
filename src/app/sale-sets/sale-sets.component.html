@@ -1,5 +1,10 @@
 <div class="container">
-  <h2 style="text-align:center; margin: 40px auto; font-weight: 400;" class="w-100 w-sm-25 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam rerum aperiam eligendi asperiores? Fugit, voluptates.</h2>
+  <div class="head w-75 w-sm-50">
+    <h2>Пакеты услуг</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ad officia, voluptates repellat similique, ducimus explicabo hic soluta, accusamus esse fuga rem ipsam recusandae sit sed cumque omnis est.</p>
+    
+  </div>
+ 
   <div class="main-container">
     <div class="card" *ngFor="let s of sales">
       <img src="{{s.Image}}" class="card-img-top" alt="Интернет магазин">
@@ -12,7 +17,7 @@
         </ul>
         <div class="d-flex align-items-center position-relative" style="overflow:hidden">
             <span class="price">Цена: {{getPrice(s)}}₽</span>
-            <a  class="btn btn-prog-light">Подать заявку</a>
+            <a  class="btn btn-prog-light" (click)="ms.open('app', getAttachment(s))">Подать заявку</a>
             
         </div>
         

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Sale } from '../services/models';
+import { Sale, Attachment, AttachmentType } from '../services/models';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-sale-sets',
@@ -36,7 +37,7 @@ export class SaleSetsComponent implements OnInit {
       ]
     },
     {
-      Id:1,
+      Id:2,
       Name:"Интернет магазин",
       Description:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. In laboriosam, porro quisquam labore asperiores fuga consequatur nihil, eos nam ad, adipisci mollitia provident possimus sint soluta perspiciatis dignissimos facere delectus!",
       Image:"../../assets/images/e-shop.png",
@@ -63,7 +64,7 @@ export class SaleSetsComponent implements OnInit {
       ]
     },
     {
-      Id:1,
+      Id:3,
       Name:"Интернет магазин",
       Discount:10,
       Description:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. In laboriosam, porro quisquam labore asperiores fuga consequatur nihil, eos nam ad, adipisci mollitia provident possimus sint soluta perspiciatis dignissimos facere delectus!",
@@ -90,7 +91,7 @@ export class SaleSetsComponent implements OnInit {
       ]
     },
     {
-      Id:1,
+      Id:4,
       Name:"Интернет магазин",
       Discount:10,
       Description:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. In laboriosam, porro quisquam labore asperiores fuga consequatur nihil, eos nam ad, adipisci mollitia provident possimus sint soluta perspiciatis dignissimos facere delectus!",
@@ -117,7 +118,7 @@ export class SaleSetsComponent implements OnInit {
       ]
     }
   ]
-  constructor() { }
+  constructor(public ms:ModalService) { }
 
   ngOnInit() {
   }
@@ -128,6 +129,15 @@ export class SaleSetsComponent implements OnInit {
       res+=s.Price;
     })
     return res*(1-s.Discount/100);
+  }
+
+  getAttachment(s: Sale):Attachment{
+    return {
+      Id:s.Id,
+      ApplicationId:s.Id,
+      Type:AttachmentType.SaleSet,
+      Content:s
+    }
   }
 
 }

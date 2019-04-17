@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Mate } from '../services/models';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'mate-info',
@@ -8,7 +9,7 @@ import { Mate } from '../services/models';
 })
 export class MateInfoComponent implements OnInit {
   @Input() mate:Mate
-  constructor() { }
+  constructor(public ms:ModalService) { }
 
   ngOnInit() {
   }

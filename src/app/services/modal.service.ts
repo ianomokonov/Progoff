@@ -20,6 +20,5 @@ export class ModalService{
         this.type = type;
         this.attr = attr;
         this.modalRef = this.modalService.show(this.modal);
-        console.log(this.modal);
     }
 }

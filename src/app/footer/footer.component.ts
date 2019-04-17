@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -19,7 +20,7 @@ export class FooterComponent implements OnInit {
     
 
   }
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
@@ -28,4 +29,8 @@ export class FooterComponent implements OnInit {
     this.showMap = !this.showMap;
   }
 
+  go(target:string){
+    this.router.navigate([target]);
+    window.scrollTo(0,0);
+  }
 }

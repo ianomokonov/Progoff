@@ -34,11 +34,11 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <h4><span>О компании</span></h4>
-        <h5><span>Возможности</span></h5>
-        <h5><span>Команда</span></h5>
-        <h5><span>Вакансии</span></h5>
-        <h5><span>Контакты</span></h5>
+        <h4><span [ngClass]="{'active':router.url=='/about'}" (click)="go('/about')">О компании</span></h4>
+        <h5><span [ngClass]="{'active':router.url=='/about/advantages'}" (click)="go('/about/advantages')">Приемущества</span></h5>
+        <h5><span [ngClass]="{'active':router.url=='/about'}" (click)="go('/about')">Команда</span></h5>
+        <h5><span [ngClass]="{'active':router.url=='/about/jobs'}" (click)="go('/about/jobs')">Вакансии</span></h5>
+        <h5><span [ngClass]="{'active':router.url=='/contacts'}" (click)="go('/contacts')">Контакты</span></h5>
       </div>
       <div class="col-sm-4">
         
@@ -52,9 +52,9 @@
         <h5>Создание интернет магазинов</h5>
       </div>
       <div class="col-sm-4">
-        <h4><span>Портфолио</span></h4>
-        <h4><span>Цены</span></h4>
-        <h4><span>Пакеты услуг</span></h4>
+        <h4><span [ngClass]="{'active':router.url=='/clients'}" (click)="go('/clients')">Портфолио</span></h4>
+        <h4><span [ngClass]="{'active':router.url=='/prices'}" (click)="go('/prices')">Цены</span></h4>
+        <h4><span [ngClass]="{'active':router.url=='/sale-sets'}" (click)="go('/sale-sets')">Пакеты услуг</span></h4>
       </div>
     </div>
     <div class="d-flex justify-content-around align-items-center end">

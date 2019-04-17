@@ -21,6 +21,15 @@
         <label for="DES">Описание</label>
         <textarea formControlName="Description" class="form-control" rows="5" id="DES" placeholder="Описание"></textarea>
     </div>
-    <button class="btn btn-prog">Отправить</button>
+    <div class="attachments main-container" *ngIf="attachment">
+        <div class="attachment">
+            <img src="{{attachment.Content.Image}}">
+            <div class="d-flex flex-column ml-2">
+                <span>{{attachment.Content.Name}}</span>
+                <span>{{attachment.Type=='sale-set'?'набор услуг':'вакансия'}}</span>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-prog" (click)="send()">Отправить</button>
   </form>
   

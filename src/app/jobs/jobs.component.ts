@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
-import { Job } from '../services/models';
+import { Job, AttachmentType, Attachment } from '../services/models';
 import { fillProperties } from '@angular/core/src/util/property';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'jobs',
@@ -14,6 +15,7 @@ export class JobsComponent implements OnInit {
       Id:1,
       Name:"SEO-специалист",
       Description:"lorem",
+      Image:"../../assets/images/prices/social-care.png",
       Requirements:[
         "Понимание особенностей работы поисковых систем;",
         "Знание методов поисковой оптимизации и умение применять их на практике;",
@@ -26,6 +28,7 @@ export class JobsComponent implements OnInit {
       Id:2,
       Name:"SEO-специалист",
       Description:"lorem",
+      Image:"../../assets/images/prices/social-care.png",
       Requirements:[
         "Понимание особенностей работы поисковых систем;",
         "Знание методов поисковой оптимизации и умение применять их на практике;",
@@ -38,6 +41,7 @@ export class JobsComponent implements OnInit {
       Id:3,
       Name:"SEO-специалист",
       Description:"lorem",
+      Image:"../../assets/images/prices/social-care.png",
       Requirements:[
         "Понимание особенностей работы поисковых систем;",
         "Знание методов поисковой оптимизации и умение применять их на практике;",
@@ -47,7 +51,7 @@ export class JobsComponent implements OnInit {
       ]
     }
   ]
-  constructor() { }
+  constructor(public ms:ModalService) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -57,6 +61,15 @@ export class JobsComponent implements OnInit {
   show(i){
     console.log(11)
     this.curJob = i;
+  }
+
+  getAttachment(s: Job):Attachment{
+    return {
+      Id:s.Id,
+      ApplicationId:s.Id,
+      Type:AttachmentType.Job,
+      Content:s
+    }
   }
 
 }
