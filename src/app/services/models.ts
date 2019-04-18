@@ -7,8 +7,7 @@ export class IdNameDescription{
 
 export class Application extends IdNameDescription{
   Email:string;
-  AttachmentId:number;
-  AttachmentType:AttachmentType;
+  CreateDate:Date;
 }
 
 
@@ -27,6 +26,7 @@ export class Client extends IdNameDescription{
 export class Sale extends IdNameDescription{
   Image:string;
   Discount:number;
+
   Services:Service[];
 }
 
@@ -38,7 +38,7 @@ export class Mate extends IdNameDescription{
 
 export class Job extends IdNameDescription{
   Image:string;
-  Requirements:string[];
+  Requirements:Requirement[];
 }
 
 export class Service extends IdNameDescription{
@@ -47,17 +47,22 @@ export class Service extends IdNameDescription{
 
 export class Attachment{
   /**
-   * Идентификатор набора услуг
+   * Идентификатор набора услуг/ вакансии
    */
   Id:number;
 
   /**
    * Идентификатор заявки
    */
-  ApplicationId:number;
+  AppId:number;
   Type:AttachmentType;
 
   Content:any;
+}
+
+export class Requirement{
+  Id:number;
+  Description:string;
 }
 
 export enum AttachmentType{

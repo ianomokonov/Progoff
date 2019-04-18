@@ -134,7 +134,7 @@ export class SaleSetsComponent implements OnInit {
   getAttachment(s: Sale):Attachment{
     return {
       Id:s.Id,
-      ApplicationId:s.Id,
+      AppId:s.Id,
       Type:AttachmentType.SaleSet,
       Content:s
     }
