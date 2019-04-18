@@ -6,7 +6,7 @@ class DataBase {
     public function __construct()
     {
         //$this->db = new PDO('mysql:host=localhost;dbname=myblog;charset=UTF8','nlc','12345');
-        $this->db = new PDO('mysql:host=localhost;dbname=nomokoiw_vi;charset=UTF8','nomokoiw_vi','lCtw&9m8');
+        $this->db = new PDO('mysql:host=localhost;dbname=nomokoiw_poff;charset=UTF8','nomokoiw_poff','ms87%L39');
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
 
@@ -15,7 +15,7 @@ class DataBase {
         if($img){
             $this->removeFile($img);
         }
-        $url = "http://client.nomokoiw.beget.tech/vi/";
+        $url = "http://client.nomokoiw.beget.tech/progoff/";
         $n = basename($t."_".$pid."_".$files['Data']['name']);
         $tid=ucfirst($t)."Id";
         $t .="s";

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS sections (
+CREATE TABLE IF NOT EXISTS clients (
 	Id int(20) PRIMARY KEY AUTO_INCREMENT,
     Name varchar(255),
     Description varchar(255) NOT NULL,
