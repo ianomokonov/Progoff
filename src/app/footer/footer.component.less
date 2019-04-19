@@ -17,7 +17,7 @@
                 font-size: 18px;
                 margin-bottom: 20px;
                 
-                span:hover{
+                span:hover, span.active{
                     
                     color:rgb(107, 153, 240);
                     cursor: pointer;
@@ -28,7 +28,7 @@
                 font-weight: 340;
                 color: rgb(142, 151, 168);
                 
-                span:hover{
+                span:hover, span.active{
                     transition: .15s ease-in-out;
                     color: whitesmoke;
                     cursor: pointer;
@@ -43,5 +43,112 @@
                 }
             }
         }
+    }
+}
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span{
+        color:rgb(223, 72, 46)
+    }
+}
+.close-map{
+    right: -710px !important;
+    
+}
+.contacts{
+
+    h3:first-child{
+        color:rgb(223, 72, 46)
+    }
+    h2{
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    position: absolute;
+    top:10px;
+    right: 30px;
+    transition: 0.7s !important;
+    padding: 20px 40px;
+    box-shadow: 1px 2px 5px rgb(75, 75, 75);
+    background-color: #fff;
+    min-width: 700px;
+    min-height: 482px;
+    .close-btn{
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 35px;
+        height: 200px;
+        padding: 8px;
+        border-radius: 10px 0 0 10px;
+
+        left:-35px;
+        background-color: #fff;
+        box-shadow: -1px -2px 5px #4b4b4b;;
+        z-index: 10;
+
+        &:hover{
+            background-color: rgb(221, 221, 221);
+            cursor: pointer;
+        }
+
+        span{
+            font-size: 18px;
+            transform: rotate(-90deg);
+            display: block;
+            white-space: nowrap;
+            
+        }
+    }
+}
+.map{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 70px 0;
+    margin: 50px 0;
+}
+
+@media(max-width:992px){
+    .contacts{
+        min-width: 370px !important;
+        .form{
+            display: none;
+        }
+    }
+    .close-map{
+        right: -400px !important;
+    }
+}
+
+@media(max-width:768px){
+    .contacts{
+        display: none;
+    }
+    .end{
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+    }
+    .col-sm-4{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        margin-bottom: 20px;
+    }
+    .map{
+        padding: 0 !important;
     }
 }

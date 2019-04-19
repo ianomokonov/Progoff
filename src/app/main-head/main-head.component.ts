@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterViewInit, AfterContentChecked } from '@angular/core';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'main-head',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-head.component.less']
 })
 export class MainHeadComponent implements OnInit {
-
-  constructor() { }
+  show = false;
+  constructor(public ms:ModalService) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.show = true;
+    },1)
   }
+
 
 }

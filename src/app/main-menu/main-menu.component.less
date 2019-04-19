@@ -1,6 +1,9 @@
+@import "../../colors.less";
+
 .main{
-    background-color: rgb(61, 66, 73);
+    background-color: @bg-prog-light;
     border-right: black;
+    
     *{
         color:white;
     }
@@ -37,7 +40,8 @@
         display: flex;
         align-items: center;
         transition: .15s ease-in-out;
-        &:not(:last-child):hover{
+
+        &:not(:last-child):hover, &.active{
             cursor: pointer;
             background-color: rgba(112, 112, 112, 0.384);
         }

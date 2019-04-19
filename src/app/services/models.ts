@@ -1,38 +1,71 @@
-export interface Good{
-    GoodId:number;
-    Name:string;
-    Description:string;
-    Price:number;
-    Color:string;
-    Image:string;
-    Photoes?:string[];
-  }
 
-  export class CartItem{
-    DealId?:number;
-    GoodId?:number;
-    Count:number;
-  
-    Good:Good;
-  }
-
-  export class User{
-    UserId:number;
-    Name:string;
-    Email:string;
-    Password:string;
-    Phone?:string;
-    IsAdmin?:boolean;
-
-    Deals:Deal[];
+export class IdNameDescription{
+  Id:number;
+  Name:string;
+  Description:string;
 }
 
-export class Deal{
-    DealId:number;
-    UserId:number;
-    CreateDate:Date;
-    ShowGoods?:boolean; //не приходит с базы не надо нигде заполнять
-    
-    User:User;
-    Goods:CartItem[];
+export class Application extends IdNameDescription{
+  Email:string;
+  CreateDate:Date;
+}
+
+
+
+export class Client extends IdNameDescription{
+  MainImage:string;
+  LeftImage:string;
+  RightImage:string;
+  Link:string;
+  Model?:string;
+  Logo?:string;
+  CreateDate?:Date;
+  LongDescription?:string;
+}
+
+export class Sale extends IdNameDescription{
+  Image:string;
+  Discount:number;
+
+  Services:Service[];
+}
+
+export class Mate extends IdNameDescription{
+  Position:string;
+  VK?:string;
+  Instagram?:string;
+}
+
+export class Job extends IdNameDescription{
+  Image:string;
+  Requirements:Requirement[];
+}
+
+export class Service extends IdNameDescription{
+  Price:number;
+}
+
+export class Attachment{
+  /**
+   * Идентификатор набора услуг/ вакансии
+   */
+  Id:number;
+
+  /**
+   * Идентификатор заявки
+   */
+  AppId:number;
+  Type:AttachmentType;
+
+  Content:any;
+}
+
+export class Requirement{
+  Id:number;
+  Description:string;
+}
+
+export enum AttachmentType{
+  SaleSet = 'sale-set',
+  Job = 'job'
 }

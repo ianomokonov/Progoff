@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="client" *ngFor="let c of clients[0]">
+      <img (click)="go('/client/'+c.Id)" src="{{c.MainImage}}">
+      <h2>{{c.Name}}</h2>
+      <p>{{c.Description}}</p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="client" *ngFor="let c of clients[1]">
+      <img (click)="go('/client/'+c.Id)" src="{{c.MainImage}}">
+      <h2>{{c.Name}}</h2>
+      <p>{{c.Description}}</p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="client" *ngFor="let c of clients[2]">
+      <img (click)="go('/client/'+c.Id)" src="{{c.MainImage}}">
+      <h2>{{c.Name}}</h2>
+      <p>{{c.Description}}</p>
+    </div>
+  </div>
+</div>

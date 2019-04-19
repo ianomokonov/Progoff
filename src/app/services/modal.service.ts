@@ -6,6 +6,7 @@ export class ModalService{
     modalRef: BsModalRef;
     modal:TemplateRef<any>;
     type:string;
+    attr:any;
     
     constructor(private modalService: BsModalService){
 
@@ -15,8 +16,9 @@ export class ModalService{
         this.type = "";
         this.modalRef.hide();
     }
-    open(type){
+    open(type, attr?){
         this.type = type;
+        this.attr = attr;
         this.modalRef = this.modalService.show(this.modal);
     }
 }

@@ -1,2 +1,18 @@
-<div class="section-container"></div>
+<div class="section-container">
+    <div class="head w-75 w-sm-50">
+        <h2>Наши клиенты</h2>
+        
+    </div>
+    <div class="client" *ngFor="let c of clients">
+        <div class="photoes" >
+            <img src="{{c.MainImage}}" (click)="go('/client/'+c.Id)" class="photo main">
+            <img src="{{c.LeftImage}}" (click)="go('/client/'+c.Id)" class="photo left">
+            <img src="{{c.RightImage}}" (click)="go('/client/'+c.Id)" class="photo right">
+        </div>
+        <div class="description">
+            <h3>{{c.Name}}</h3>
+            <p>{{c.Description}}</p>
+        </div>
+    </div>
+</div>
 

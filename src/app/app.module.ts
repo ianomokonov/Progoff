@@ -16,6 +16,8 @@ import { ModalService } from './services/modal.service';
 
 //HTTP запросы
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+//Компоненты
 import { FooterComponent } from './footer/footer.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -26,6 +28,18 @@ import { SaleSetsComponent } from './sale-sets/sale-sets.component';
 import { AboutComponent } from './about/about.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { MainAboutComponent } from './main-about/main-about.component';
+import { ApplicationFormComponent } from './application-form/application-form.component';
+import { AboutBodyComponent } from './about-body/about-body.component';
+import { TeamComponent } from './team/team.component';
+import { AdvantagesComponent } from './advantages/advantages.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { MateInfoComponent } from './mate-info/mate-info.component';
+import { SaleSetsMainComponent } from './sale-sets-main/sale-sets-main.component';
+import { ProcessComponent } from './process/process.component';
+import { ClientComponent } from './client/client.component';
+import { ClientService } from './services/client.service';
+import { SameClientsComponent } from './same-clients/same-clients.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +54,18 @@ import { ContactsComponent } from './contacts/contacts.component';
     SaleSetsComponent,
     AboutComponent,
     ClientsComponent,
-    ContactsComponent
+    ContactsComponent,
+    MainAboutComponent,
+    ApplicationFormComponent,
+    AboutBodyComponent,
+    TeamComponent,
+    AdvantagesComponent,
+    JobsComponent,
+    MateInfoComponent,
+    SaleSetsMainComponent,
+    ProcessComponent,
+    ClientComponent,
+    SameClientsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +75,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FormBuilder, HttpClient, ModalService, BsModalService],
+  providers: [FormBuilder, HttpClient, ModalService, BsModalService, ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

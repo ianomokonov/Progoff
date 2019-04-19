@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div class=" section-content">
+    <!-- <team *ngIf="curSection==0"></team>
+    <advantages *ngIf="curSection==1"></advantages>
+    <jobs *ngIf="curSection==2"></jobs> -->
+    <router-outlet></router-outlet>
+  </div>
+  <div class=" sections">
+    <div [ngClass]="{'active':router.url=='/about'}" class="section" (click)="go('/about')">
+      <span>Команда</span>
+    </div>
+    <div [ngClass]="{'active':router.url=='/about/advantages'}" class="section" (click)="go('/about/advantages')">
+      <span>Приемущества</span>
+    </div>
+    <div [ngClass]="{'active':router.url=='/about/jobs'}" class="section" (click)="go('/about/jobs')">
+      <span>Вакансии</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.container-fluid{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .mate{
+        height: 180px;
+        width: 300px;
+        padding: 10px;
+        background-image: url("../../assets/images/mateback.svg");
+        background-position: center;
+        background-size: contain;
+        position: relative;
+        top:-20px;
+        opacity: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-shadow: 3px 3px 5px black;
+        background-color: rgba(62, 66, 70, 0.685);
+        transition: 0.3s;
+        &:hover{
+            box-shadow: 6px 7px 10px black !important;
+        }
+        &.active{
+            opacity: 1 !important;
+            top: 0 !important;
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .btn{
+            border-radius: 0;
+        }
+    }
+}
+
+@media(max-width:768px){
+    .container-fluid{
+        justify-content: center;
+        .mate{
+            margin: 0 !important;
+            margin-bottom: 20px !important;
+        }
+    }
+    
+}
