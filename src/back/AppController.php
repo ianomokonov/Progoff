@@ -15,6 +15,9 @@ if(isset($_GET['Key']))
         case 'get-team':
             echo json_encode($ctxt->getTeam());
             break;
+        case 'get-jobs':
+            echo json_encode($ctxt->getJobs());
+            break;
         case 'add-app':
             $b = json_decode(file_get_contents('php://input'), true);
             echo json_encode($ctxt->addApp($b['App'], $b['Attachment']));

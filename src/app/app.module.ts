@@ -40,6 +40,8 @@ import { ProcessComponent } from './process/process.component';
 import { ClientComponent } from './client/client.component';
 import { ClientService } from './services/client.service';
 import { SameClientsComponent } from './same-clients/same-clients.component';
+import { LoadService } from './services/load.service';
+import { LoadComponent } from './load/load.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { SameClientsComponent } from './same-clients/same-clients.component';
     SaleSetsMainComponent,
     ProcessComponent,
     ClientComponent,
-    SameClientsComponent
+    SameClientsComponent,
+    LoadComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,7 @@ import { SameClientsComponent } from './same-clients/same-clients.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FormBuilder, HttpClient, ModalService, BsModalService, ClientService],
+  providers: [FormBuilder, HttpClient, ModalService, BsModalService, ClientService, LoadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

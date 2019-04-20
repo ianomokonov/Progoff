@@ -1,6 +1,6 @@
 
-<h2>Пакеты услуг</h2>
-<div>
+<h2 *ngIf="sales && sales.length>0">Пакеты услуг</h2>
+<div *ngIf="sales && sales.length>0">
     <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol *ngIf="sales.length>1" class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" *ngFor="let s of sales; let i = index;" data-slide-to="i" class="active"></li>

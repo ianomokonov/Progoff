@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Attachment, Application } from '../services/models';
+import { ClientService } from '../services/client.service';
+import { ModalService } from '../services/modal.service';
+import { LoadService } from '../services/load.service';
 
 @Component({
   selector: 'application-form',
@@ -11,7 +14,7 @@ export class ApplicationFormComponent implements OnInit {
   userForm:FormGroup;
   submitted = false;
   @Input() attachment: Attachment;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private cs:ClientService, private ms:ModalService, private ls:LoadService) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -30,13 +33,22 @@ export class ApplicationFormComponent implements OnInit {
 
     //то, что отправляется на сервер
     let app = {
-      Name:this.userForm.value.Name,
-      Description:this.userForm.value.Description,
-      Email:this.userForm.value.Email,
-      AttachmentId:this.attachment?this.attachment.Id:null,
-      AttachmentType:this.attachment?this.attachment.Type:null
+      App: {
+        Name:this.userForm.value.Name,
+        Description:this.userForm.value.Description,
+        Email:this.userForm.value.Email
+      },
+      Attachment: {
+        Id:this.attachment?this.attachment.Id:null,
+        AppId: 0,
+        Type: this.attachment?this.attachment.Type:null
+      }
     }
-    console.log(app);
+    this.ls.showLoad = true;
+    this.cs.addApp(app).subscribe(()=> {
+      this.ms.close();
+      this.ls.showLoad = false;
+    })
 
   }
 

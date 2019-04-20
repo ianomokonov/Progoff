@@ -139,12 +139,15 @@ class DataBase {
         if($res[1][0]!=null){
             $s->execute($res[1]);
         }
-        $attachment['AppId'] = $this->db->lastInsertId();
-        $res = $this->genInsertQuery($attachment,"attachments");
-        $s = $this->db->prepare($res[0]);
-        if($res[1][0]!=null){
-            $s->execute($res[1]);
+        if($attachment['Id']!='null'){
+            $attachment['AppId'] = $this->db->lastInsertId();
+            $res = $this->genInsertQuery($attachment,"attachments");
+            $s = $this->db->prepare($res[0]);
+            if($res[1][0]!=null){
+                $s->execute($res[1]);
+            }
         }
+        
         
         return $this->db->lastInsertId();
     }

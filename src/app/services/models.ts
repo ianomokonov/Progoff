@@ -65,6 +65,23 @@ export class Requirement{
   Description:string;
 }
 
+export class NewApplication{
+  App:App;
+  Attachment:Attach;
+}
+
+export class App{
+  Name:string;
+  Description:string;
+  Email:string;
+}
+
+export class Attach{
+  Id:number;
+  AppId:number;
+  Type:AttachmentType;
+}
+
 export enum AttachmentType{
   SaleSet = 'sale-set',
   Job = 'job'
