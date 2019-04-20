@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Mate } from '../services/models';
 import { ModalService } from '../services/modal.service';
+import { LoadService } from '../services/load.service';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'team',
@@ -43,12 +45,18 @@ export class TeamComponent implements OnInit {
       Instagram:"https://www.instagram.com/vanika_koma/" 
     }
   ];
-  constructor( private ms:ModalService) { }
+  constructor( private ms:ModalService, private ls:LoadService, private cs:ClientService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.showp = true;
-    },1)
+    this.ls.showLoad = true;
+    this.cs.getTeam().subscribe(data => {
+      this.team = data;
+      this.ls.showLoad=false;
+      setTimeout(() => {
+        this.showp = true;
+      },1)
+    })
+    
   }
 
   show(m:Mate){

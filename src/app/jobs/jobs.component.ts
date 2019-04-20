@@ -2,6 +2,8 @@ import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Job, AttachmentType, Attachment } from '../services/models';
 import { fillProperties } from '@angular/core/src/util/property';
 import { ModalService } from '../services/modal.service';
+import { ClientService } from '../services/client.service';
+import { LoadService } from '../services/load.service';
 
 @Component({
   selector: 'jobs',
@@ -10,56 +12,22 @@ import { ModalService } from '../services/modal.service';
 })
 export class JobsComponent implements OnInit {
   curJob = -1;
-  // jobs:Job[] = [
-  //   {
-  //     Id:1,
-  //     Name:"SEO-специалист",
-  //     Description:"lorem",
-  //     Image:"../../assets/images/prices/social-care.png",
-  //     Requirements:[
-  //       "Понимание особенностей работы поисковых систем;",
-  //       "Знание методов поисковой оптимизации и умение применять их на практике;",
-  //       "Хорошие аналитические способности;",
-  //       "Умение читать HTML и CSS;",
-  //       "Знание и понимание основных CMS, функционала Google Analytics, Google Webmasters, Яндекс.Метрики, Яндекс.Вебмастера"
-  //     ]
-  //   },
-  //   {
-  //     Id:2,
-  //     Name:"SEO-специалист",
-  //     Description:"lorem",
-  //     Image:"../../assets/images/prices/social-care.png",
-  //     Requirements:[
-  //       "Понимание особенностей работы поисковых систем;",
-  //       "Знание методов поисковой оптимизации и умение применять их на практике;",
-  //       "Хорошие аналитические способности;",
-  //       "Умение читать HTML и CSS;",
-  //       "Знание и понимание основных CMS, функционала Google Analytics, Google Webmasters, Яндекс.Метрики, Яндекс.Вебмастера"
-  //     ]
-  //   },
-  //   {
-  //     Id:3,
-  //     Name:"SEO-специалист",
-  //     Description:"lorem",
-  //     Image:"../../assets/images/prices/social-care.png",
-  //     Requirements:[
-  //       "Понимание особенностей работы поисковых систем;",
-  //       "Знание методов поисковой оптимизации и умение применять их на практике;",
-  //       "Хорошие аналитические способности;",
-  //       "Умение читать HTML и CSS;",
-  //       "Знание и понимание основных CMS, функционала Google Analytics, Google Webmasters, Яндекс.Метрики, Яндекс.Вебмастера"
-  //     ]
-  //   }
-  // ]
-  constructor(public ms:ModalService) { }
+  jobs:Job[];
+  
+  constructor(public ms:ModalService, private cs:ClientService, private ls:LoadService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.curJob = 0;
-    },1)
+    this.ls.showLoad = true;
+    this.cs.getJobs().subscribe(data => {
+      this.jobs = data;
+      this.ls.showLoad = false;
+      setTimeout(() => {
+        this.curJob = 0;
+      },1)
+    })
+    
   }
   show(i){
-    console.log(11)
     this.curJob = i;
   }
 

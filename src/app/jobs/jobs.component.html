@@ -2,7 +2,7 @@
   <div class="job" [ngClass]="{'active':curJob==i}" *ngFor="let j of jobs; let i = index" (click)="show(i)">
     <h3>{{j.Name}}</h3>
     <ul>
-      <li *ngFor="let r of j.Requirements">{{r}}</li>
+      <li *ngFor="let r of j.Requirements">{{r.Description}}</li>
     </ul>
     <span></span>
     <span></span>
