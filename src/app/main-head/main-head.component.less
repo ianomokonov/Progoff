@@ -33,7 +33,7 @@
         z-index: 20;
         color: white;
         transition: 1s;
-        &.active{
+        &.activee{
             opacity: 1;
             left: 0 !important;
         }
@@ -49,6 +49,32 @@
     }
     button{
         transition-delay: 0.2s;
+        position: relative;
+        overflow: hidden;
+        &:hover{
+            transition-delay: 0s !important;
+
+            &::after{
+                content: '';
+                display: block;;
+                background-color: rgba(#fff, 0.5);
+                position: absolute;
+                top: 0;
+                animation: blink 0.6s forwards;
+                width: 30px;
+                height: 100px;
+                transform: skewX(-45deg);
+            }
+        }
+    }
+}
+
+@keyframes blink{
+    from{
+        left: -70px;
+    }
+    to{
+        left: 110%;
     }
 }
 

@@ -11,7 +11,7 @@ export class HomePageComponent implements OnInit {
   @HostListener('document:scroll', [])
             onScroll(): void {
               let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
-              if(y.height+(y.top-800)<0){
+              if(y.height+(y.top-window.innerHeight*1.2)<0){
                 this.show=true;
               }else{
                 this.show=false;
