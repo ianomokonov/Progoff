@@ -82,6 +82,14 @@ export class Attach{
   Type:AttachmentType;
 }
 
+export class Price{
+  Id:number;
+  Image:string;
+  Name:string;
+  
+  Services:Service[];
+}
+
 export enum AttachmentType{
   SaleSet = 'sale-set',
   Job = 'job'

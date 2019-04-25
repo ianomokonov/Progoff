@@ -1,4 +1,4 @@
-import { Client, Mate, Sale, NewApplication, Job } from './models';
+import { Client, Mate, Sale, NewApplication, Job, Price } from './models';
 import { Injectable} from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { LoadService } from './load.service';
@@ -7,7 +7,7 @@ import { LoadService } from './load.service';
 @Injectable()
 export class ClientService{
     
-    baseUrl:string='http://client.nomokoiw.beget.tech/progoff/';
+    baseUrl:string='http://progoff.ru/progoff/';
     clients:Client[];
     constructor(private http: HttpClient, private ls:LoadService ){
       this.ls.showLoad = true;
@@ -20,7 +20,6 @@ export class ClientService{
     
 
     getClients(){
-      
       return this.http.get<Client[]>(this.baseUrl + 'AppController.php?Key=get-clients');
     }
 
@@ -34,6 +33,10 @@ export class ClientService{
 
     getSales(){
       return this.http.get<Sale[]>(this.baseUrl + 'AppController.php?Key=get-sales');
+    }
+
+    getPrices(){
+      return this.http.get<Price[]>(this.baseUrl + 'AppController.php?Key=get-prices');
     }
 
     addApp(app:NewApplication){

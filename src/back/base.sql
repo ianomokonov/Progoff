@@ -82,3 +82,18 @@ CREATE TABLE IF NOT EXISTS saleservice (
     CONSTRAINT sssale_fk FOREIGN KEY(SaleId) REFERENCES sales(Id) ON DELETE CASCADE,
     CONSTRAINT ssservice_fk FOREIGN KEY(ServiceId) REFERENCES services(Id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS prices (
+	Id INT(20) PRIMARY KEY AUTO_INCREMENT,
+    Image VARCHAR(100) NOT NULL, 
+    Name VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS price_service (
+    PriceId int(20) NOT NULL,
+    ServiceId int(20) NOT NULL,
+    
+    CONSTRAINT priceservice_pk PRIMARY KEY(PriceId, ServiceId),
+    CONSTRAINT psprice_fk FOREIGN KEY(PriceId) REFERENCES prices(Id) ON DELETE CASCADE,
+    CONSTRAINT psservice_fk FOREIGN KEY(ServiceId) REFERENCES services(Id) ON DELETE CASCADE
+);
