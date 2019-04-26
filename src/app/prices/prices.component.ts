@@ -30,7 +30,6 @@ export class PricesComponent implements OnInit {
     this.ls.showLoad = true;
     this.cs.getPrices().subscribe(prices => {
       this.prices = prices;
-      console.log(prices);
       this.ls.showLoad = false;
       setTimeout(() => {
         this.show[0]=true;

@@ -24,7 +24,7 @@ export class SaleSetsComponent implements OnInit {
   getPrice(s:Sale){
     var res = 0;
     s.Services.forEach(s => {
-      res+=s.Price;
+      res+=Number(s.Price)*1000;
     })
     return res*(1-s.Discount/100);
   }
