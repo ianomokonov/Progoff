@@ -9,21 +9,18 @@ import { LoadService } from '../services/load.service';
   styleUrls: ['./prices.component.less']
 })
 export class PricesComponent implements OnInit {
-  show = [false, false, false, false];
+  show = [];
   prices:Price[];
-  // @HostListener('document:scroll', [])
-  //           onScroll(): void {
-  //             let y = document.getElementsByClassName("price");
-  //             if(y[1].getBoundingClientRect().top<window.innerHeight-100){
-  //               this.show[1] = true;
-  //             }
-  //             if(y[2].getBoundingClientRect().top<window.innerHeight-100){
-  //               this.show[2] = true;
-  //             }
-  //             if(y[3].getBoundingClientRect().top<window.innerHeight-100){
-  //               this.show[3] = true;
-  //             }
-  //           }
+  @HostListener('document:scroll', [])
+            onScroll(): void {
+              let y = document.getElementsByClassName("price");
+              for(let i = 1; i<y.length; i++){
+                if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+                  this.show[i] = true;
+                }
+              }
+              
+            }
   constructor(private cs:ClientService, private ls:LoadService) { }
 
   ngOnInit() {
@@ -31,9 +28,18 @@ export class PricesComponent implements OnInit {
     this.cs.getPrices().subscribe(prices => {
       this.prices = prices;
       this.ls.showLoad = false;
+      prices.forEach(x => {
+        this.show.push(false);
+      })
       setTimeout(() => {
         this.show[0]=true;
       },1);
+      let y = document.getElementsByClassName("price");
+      for(let i = 1; i<y.length; i++){
+        if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+          this.show[i] = true;
+        }
+      }
     }) 
   }
 
