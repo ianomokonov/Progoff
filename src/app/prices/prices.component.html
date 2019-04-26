@@ -5,11 +5,11 @@
       
     </div>
     <div class="prices" *ngIf="prices">
-      <div class="price" *ngFor="let p of prices">
+      <div class="price" *ngFor="let p of prices; let i = index">
         <div class="image">
-          <img src="{{p.Image}}" [ngClass]="{'active': show[0]}">
+          <img src="{{p.Image}}" [ngClass]="{'active': show[i]}">
         </div>
-        <div class="values" [ngClass]="{'active': show[0]}">
+        <div class="values" [ngClass]="{'active': show[i]}">
           <h3>{{p.Name}}</h3>
           <span *ngFor="let s of p.Services">{{s.Name}}<br><b>от {{s.Price}} тыс. рублей</b></span>
           <!-- <h3>Cоздание сайта</h3>
