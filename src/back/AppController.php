@@ -10,6 +10,7 @@ if(isset($_GET['Key']))
     
     switch ($_GET['Key']) {
         case 'get-clients':
+             $ctxt->setEnter($_SERVER['REMOTE_ADDR']);
             echo json_encode($ctxt->getClients());
             break;
         case 'get-prices':

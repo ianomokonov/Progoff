@@ -85,6 +85,14 @@ class DataBase {
         
     }
     
+    public function setEnter($ip){
+        $sth = $this->db->query("SELECT IP FROM enters ORDER BY Id DESC LIMIT 1");
+        if($sth->fetch()['IP']!=$ip){
+            $s = $this->db->prepare("INSERT INTO enters (IP) VALUES (?)");
+            $s->execute(array($ip));
+        }
+    }
+    
     public function getClients(){
         $sth = $this->db->query("SELECT * FROM clients");
         $sth->setFetchMode(PDO::FETCH_CLASS, 'Client');
