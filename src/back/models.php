@@ -54,4 +54,12 @@ class Application extends BaseEntity{
     public $Email;
     public $CreateDate;
 }
+
+class Price{
+    public $Id;
+    public $Name;
+    public $Image;
+    
+    public $Services;
+}
 ?>

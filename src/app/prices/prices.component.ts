@@ -26,6 +26,7 @@ export class PricesComponent implements OnInit {
   ngOnInit() {
     this.ls.showLoad = true;
     this.cs.getPrices().subscribe(prices => {
+      console.log(prices);
       this.prices = prices;
       this.ls.showLoad = false;
       prices.forEach(x => {

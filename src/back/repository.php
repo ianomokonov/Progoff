@@ -107,6 +107,17 @@ class DataBase {
         }
         return $sales;
     }
+    
+    public function getPrices(){
+        $sth = $this->db->query("SELECT * FROM prices");
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'Price');
+        $prices = [];
+        while ($s = $sth->fetch()) {
+            $s->Services = $this->getPriceServs($s->Id);
+            $prices[] = $s;
+        }
+        return $prices;
+    }
 
     public function getJobs(){
         $sth = $this->db->query("SELECT * FROM jobs");
@@ -122,6 +133,13 @@ class DataBase {
     private function getSaleServs($sid){
         $s = $this->db->prepare("SELECT ser.Id as Id, ser.Name as Name, ser.Description as Description, ser.Price as Price from (sales sale RIGHT join saleservice ss ON sale.Id = ss.SaleId) LEFT JOIN services ser ON ser.Id = ss.ServiceId WHERE sale.Id=?");
         $s->execute(array($sid));
+        $s->setFetchMode(PDO::FETCH_CLASS, 'Service');
+        return $s->fetchAll();
+    }
+    
+    private function getPriceServs($pid){
+        $s = $this->db->prepare("SELECT ser.Id as Id, ser.Name as Name, ser.Description as Description, ser.Price as Price from (prices price RIGHT join priceservice ps ON price.Id = ps.PriceId) LEFT JOIN services ser ON ser.Id = ps.ServiceId WHERE price.Id=?");
+        $s->execute(array($pid));
         $s->setFetchMode(PDO::FETCH_CLASS, 'Service');
         return $s->fetchAll();
     }

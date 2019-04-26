@@ -12,6 +12,9 @@ if(isset($_GET['Key']))
         case 'get-clients':
             echo json_encode($ctxt->getClients());
             break;
+        case 'get-prices':
+            echo json_encode($ctxt->getPrices());
+            break;
         case 'get-team':
             echo json_encode($ctxt->getTeam());
             break;

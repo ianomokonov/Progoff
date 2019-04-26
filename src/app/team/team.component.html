@@ -4,8 +4,8 @@
       <h4>{{m.Name}}</h4>
       <small>{{m.Position}}</small>
       <div>
-        <a class="p-link" href="{{m.VK}}" target="blank"><i class="fab fa-vk"></i></a>
-        <a class="p-link" href="{{m.Instagram}}"><i class="fab fa-instagram"></i></a>
+        <a *ngIf="m.VK" class="p-link" href="{{m.VK}}" target="blank"><i class="fab fa-vk"></i></a>
+        <a *ngIf="m.Instagram"  class="p-link" href="{{m.Instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     
