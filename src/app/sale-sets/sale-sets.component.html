@@ -1,13 +1,13 @@
 <div *ngIf="sales && sales.length>0" class="container">
   <div class="head w-75 w-sm-50">
     <h2>Пакеты услуг</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ad officia, voluptates repellat similique, ducimus explicabo hic soluta, accusamus esse fuga rem ipsam recusandae sit sed cumque omnis est.</p>
+    <p>Progoff найдет подход к любому клиенту. Если Вы не нашли среди наших услуг то, что Вас интересует, мы готовы предложить уже сформированные пакеты по сниженным ценам.</p>
     
   </div>
  
   <div class="main-container">
     <div class="card" *ngFor="let s of sales">
-      <img src="{{s.Image}}" class="card-img-top" alt="Интернет магазин">
+      <img src="{{s.Image}}" class="card-img-top" alt="Пакет услуг">
       <div class="card-body">
         <h5 class="card-title">{{s.Name}}</h5>
         <p class="card-text">{{s.Description}}</p>
