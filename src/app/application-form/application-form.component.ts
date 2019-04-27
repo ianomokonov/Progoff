@@ -14,7 +14,8 @@ export class ApplicationFormComponent implements OnInit {
   userForm:FormGroup;
   submitted = false;
   @Input() attachment: Attachment;
-  constructor(private fb:FormBuilder, private cs:ClientService, private ms:ModalService, private ls:LoadService) { }
+  @Input() show: boolean = true;
+  constructor(private fb:FormBuilder, private cs:ClientService, public ms:ModalService, private ls:LoadService) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
