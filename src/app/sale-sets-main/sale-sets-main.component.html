@@ -3,9 +3,16 @@
 <div *ngIf="sales && sales.length>0">
     <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol *ngIf="sales.length>1" class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" *ngFor="let s of sales; let i = index;" data-slide-to="i" class="active"></li>
+            <li data-target="#carouselExampleIndicators" *ngFor="let s of sales; let i = index;" [attr.data-slide-to]="i" [ngClass]="{'active':i==0}"></li>
 
         </ol>
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol> -->
         <div class="carousel-inner my-4 pb-3">
             <div class="carousel-item" [ngClass]="{'active':i==0}" *ngFor="let s of sales; let i = index;">
             <div class="d-flex flex-wrap align-items-stretch justify-content-center h-100">
