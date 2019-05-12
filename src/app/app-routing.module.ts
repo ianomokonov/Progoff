@@ -10,6 +10,7 @@ import { ClientComponent } from './client/client.component';
 import { TeamComponent } from './team/team.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { AdvantagesComponent } from './advantages/advantages.component';
+import { PolicyComponent } from './policy/policy.component';
 
 const aboutRouts: Routes = [
   { path: '', component: TeamComponent, pathMatch: 'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'prices', component: PricesComponent},
   { path: 'sale-sets', component: SaleSetsComponent},
   { path: 'client/:id', component: ClientComponent },
+  { path: 'policy', component: PolicyComponent},
   //{ path: 'contacts', component: ContactsComponent}
 ];
 
