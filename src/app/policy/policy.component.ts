@@ -16,8 +16,4 @@ export class PolicyComponent implements OnInit {
     this.ms.close()
   }
 
-  go(target:string){
-    this.router.navigate([target]);
-  }
-
 }

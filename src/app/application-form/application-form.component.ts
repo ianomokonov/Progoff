@@ -22,7 +22,8 @@ export class ApplicationFormComponent implements OnInit {
       Name: ['', Validators.required],
       Email: ['', [Validators.required, Validators.email]],
       //Phone: ['', [Validators.required, Validators.pattern]],
-      Description: ['']
+      Description: [''],
+      Privacy: ['', Validators.requiredTrue]
     });
   }
 
