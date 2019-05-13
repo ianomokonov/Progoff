@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../services/modal.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-policy',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PolicyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ms:ModalService, public router:Router) {
+   }
 
   ngOnInit() {
+    this.ms.close()
+  }
+
+  go(target:string){
+    this.router.navigate([target]);
   }
 
 }
