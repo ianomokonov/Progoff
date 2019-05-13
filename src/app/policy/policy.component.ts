@@ -13,7 +13,7 @@ export class PolicyComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.ms.close()
+    
   }
 
 }

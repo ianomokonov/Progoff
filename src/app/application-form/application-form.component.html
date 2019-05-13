@@ -32,7 +32,7 @@
     </div>
     <div class="form-group form-check">
         <input formControlName="Privacy" type="checkbox" class="form-check-input" id="exampleCheck1" [ngClass]="{'border-danger':(submitted && f.Privacy.errors)}">
-        <label class="form-check-label" for="exampleCheck1">С <a routerLink="/policy">политикой конфиденциальности</a> ознакомлен</label>
+        <label class="form-check-label" for="exampleCheck1">С <a routerLink="/policy" (click)="ms.close()">политикой конфиденциальности</a> ознакомлен</label>
         <small class="form-text text-danger" *ngIf="submitted && f.Privacy.errors">Вы должны согласиться с политикой конфиденциальности</small>
     </div>
     <button class="btn btn-prog" (click)="send()">Отправить</button>
