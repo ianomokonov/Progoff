@@ -1,24 +1,26 @@
-<div class="section-container" [ngStyle]="{'background-image':'url('+client.MainImage+')'}" >
-  <h2 *ngIf="!client.Logo">{{client.Name}}</h2>
-  <img *ngIf="client.Logo" src="{{client.Logo}}">
-  <p>{{client.Description}}</p>
-  <a *ngIf="client.Link" href="{{client.Link}}">{{client.Link}}</a>
-</div>
-<div class="container-fluid">
-  <h2>Задача</h2>
-  <p>{{client.LongDescription}}</p>
-  <div class="date">
-    <span>Дата создания:</span>
-    <p>{{client.CreateDate | date: "dd.MM.yyyy"}}</p>
+<div *ngIf="client">
+  <div class="section-container" [ngStyle]="{'background-image':'url('+client.MainImage+')'}" >
+    <h2 *ngIf="client.Logo">{{client.Name}}</h2>
+    <img *ngIf="client.Logo" src="{{client.Logo}}">
+    <p>{{client.Description}}</p>
+    <a *ngIf="client.Link" href="{{client.Link}}">{{client.Link}}</a>
   </div>
-</div>
-<div class="container">
-  <h2>
-    Главная страница
-  </h2>
-  <img src="{{client.Model}}" alt="">
-</div>
-<div class="container-fluid">
-  <h2>Еще работы</h2>
-  <same-clients [curClientId]="client.Id"></same-clients>
-</div>
+  <div class="container-fluid">
+    <h2>Задача</h2>
+    <p>{{client.LongDescription}}</p>
+    <div class="date">
+      <span>Дата создания:</span>
+      <p>{{client.CreateDate | date: "dd.MM.yyyy"}}</p>
+    </div>
+  </div>
+  <div class="container">
+    <h2>
+      Главная страница
+    </h2>
+    <img src="{{client.Model}}" alt="">
+  </div>
+  <div class="container-fluid">
+    <h2>Еще работы</h2>
+    <same-clients [curClientId]="client.Id"></same-clients>
+  </div>
+</div> 

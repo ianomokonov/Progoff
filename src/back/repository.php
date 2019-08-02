@@ -96,7 +96,22 @@ class DataBase {
     public function getClients(){
         $sth = $this->db->query("SELECT * FROM clients");
         $sth->setFetchMode(PDO::FETCH_CLASS, 'Client');
-        return $sth->fetchAll();
+        $clis=[];
+        while ($s = $sth->fetch()) {
+            $s->CreateDate = date("Y/m/d H:00:00",strtotime($s->CreateDate));
+            $clis[]=$s;
+        }
+        
+        return $clis;
+    }
+    
+    public function getClient($id){
+        $sth = $this->db->prepare("SELECT * FROM clients WHERE Id=?");
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'Client');
+        $sth->execute(array($id));
+        $s=$sth->fetch();
+        $s->CreateDate = date("Y/m/d H:00:00",strtotime($s->CreateDate));
+        return $s;
     }
 
     public function getTeam(){
@@ -114,6 +129,25 @@ class DataBase {
             $sales[] = $s;
         }
         return $sales;
+    }
+    
+    private function getEntersCount(){
+        $s = $this->db->query("select count(*) as Count from enters where date_format(CreateDate, '%Y%m') = date_format(now(), '%Y%m')");
+        return $s->fetch()['Count'];
+    }
+    
+    private function getLastEntersCount(){
+        $s = $this->db->query("select count(*) as Count from enters where date_format(CreateDate, '%Y%m') = date_format(date_add(now(), interval -1 month), '%Y%m')");
+        return $s->fetch()['Count'];
+    }
+    
+    public function sendEnters(){
+        
+        $subject = "Показатели посещаемости";
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $did = $this->getEntersCount();
+        $l = $this->getLastEntersCount();
+        mail("nomokonov.vana@gmail.com", $subject, "<p>Посещений сайта progoff.ru за текущий месяц:</p><p>$did</p><p>Посещений сайта progoff.ru за предыдущий месяц:</p><p>$l</p>", $headers); 
     }
     
     public function getPrices(){

@@ -5,7 +5,7 @@
     </div>
     <div class="client" *ngFor="let c of clients">
         <div class="photoes" >
-            <img src="{{c.MainImage}}" (click)="go('/client/'+c.Id)" class="photo main">
+            <div [ngStyle]="{'background-image':'url('+c.MainImage+')'}" (click)="go('/client/'+c.Id)" class="photo main section-container"></div>
             <img src="{{c.LeftImage}}" (click)="go('/client/'+c.Id)" class="photo left">
             <img src="{{c.RightImage}}" (click)="go('/client/'+c.Id)" class="photo right">
         </div>

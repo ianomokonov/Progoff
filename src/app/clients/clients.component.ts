@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from '../services/models';
 import { ClientService } from '../services/client.service';
 import { Router } from '@angular/router';
+import { LoadService } from '../services/load.service';
 
 @Component({
   selector: 'clients',
@@ -10,8 +11,13 @@ import { Router } from '@angular/router';
 })
 export class ClientsComponent implements OnInit {
   clients:Client[];
-  constructor(private cs:ClientService, private router:Router) { 
-    this.clients = this.cs.clients;
+  constructor(private cs:ClientService, private ls:LoadService, private router:Router) { 
+    this.ls.showLoad = true;
+    this.cs.getClients().subscribe(clis => {
+      this.clients = clis;
+      this.ls.showLoad = false;
+    })
+    
   }
 
   ngOnInit() {

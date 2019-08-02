@@ -32,7 +32,9 @@
         padding: 5px 10px;
     }
     &>img{
-        width: 80px;
+        width: 120px;
+        position: relative;
+        z-index: 10;
     }
     
 }
@@ -144,6 +146,14 @@ body{
     }
     
     
+}
+
+@media (max-width: 768px){
+    .btn{
+        &::after{
+            display: none !important;
+        }
+    }
 }
 .modal-open{
     overflow: hidden !important;

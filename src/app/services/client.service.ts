@@ -8,19 +8,17 @@ import { LoadService } from './load.service';
 export class ClientService{
     
     baseUrl:string='http://progoff.ru/progoff/';
-    clients:Client[];
     constructor(private http: HttpClient, private ls:LoadService ){
-      this.ls.showLoad = true;
-      this.getClients().subscribe(data => {
-        this.clients = data;
-        this.ls.showLoad = false;
-      })
     }
 
     
 
     getClients(){
       return this.http.get<Client[]>(this.baseUrl + 'AppController.php?Key=get-clients');
+    }
+
+    getClient(id){
+      return this.http.get<Client>(this.baseUrl + 'AppController.php?Key=get-client&Id='+id);
     }
 
     getTeam(){

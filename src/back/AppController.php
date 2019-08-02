@@ -13,6 +13,9 @@ if(isset($_GET['Key']))
              $ctxt->setEnter($_SERVER['REMOTE_ADDR']);
             echo json_encode($ctxt->getClients());
             break;
+        case 'get-client':
+            echo json_encode($ctxt->getClient($_GET['Id']));
+            break;
         case 'get-prices':
             echo json_encode($ctxt->getPrices());
             break;
