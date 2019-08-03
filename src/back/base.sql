@@ -57,6 +57,12 @@ CREATE TABLE IF NOT EXISTS services (
     Price int(20) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS makets (
+	Id int(20) PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(255),
+    Path varchar(255)
+);
+
 CREATE TABLE IF NOT EXISTS requirements (
 	Id int(20) PRIMARY KEY AUTO_INCREMENT,
     Description text NOT NULL

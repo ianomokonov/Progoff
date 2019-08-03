@@ -62,4 +62,10 @@ class Price{
     
     public $Services;
 }
+
+class Maket{
+    public $Id;
+    public $Name;
+    public $Path;
+}
 ?>

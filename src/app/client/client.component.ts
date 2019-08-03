@@ -17,6 +17,7 @@ export class ClientComponent implements OnInit, AfterContentChecked {
     this.ls.showLoad = true;
     this.cs.getClient(this.route.snapshot.paramMap.get("id")).subscribe(cli => {
       this.client = cli;
+      this.ls.showLoad = false;
     })
   }
 

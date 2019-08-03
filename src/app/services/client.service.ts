@@ -6,7 +6,7 @@ import { LoadService } from './load.service';
 
 @Injectable()
 export class ClientService{
-    
+    makets = [];
     baseUrl:string='http://progoff.ru/progoff/';
     constructor(private http: HttpClient, private ls:LoadService ){
     }
@@ -21,12 +21,20 @@ export class ClientService{
       return this.http.get<Client>(this.baseUrl + 'AppController.php?Key=get-client&Id='+id);
     }
 
+    getMaket(id){
+      return this.http.get<any>(this.baseUrl + 'AppController.php?Key=get-maket&Id='+id);
+    }
+
     getTeam(){
       return this.http.get<Mate[]>(this.baseUrl + 'AppController.php?Key=get-team');
     }
 
     getJobs(){
       return this.http.get<Job[]>(this.baseUrl + 'AppController.php?Key=get-jobs');
+    }
+
+    getMakets(){
+      return this.http.get<Job[]>(this.baseUrl + 'AppController.php?Key=get-makets');
     }
 
     getSales(){

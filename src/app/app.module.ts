@@ -43,6 +43,8 @@ import { SameClientsComponent } from './same-clients/same-clients.component';
 import { LoadService } from './services/load.service';
 import { LoadComponent } from './load/load.component';
 import { PolicyComponent } from './policy/policy.component';
+import { ExamplesComponent } from './examples/examples.component';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { PolicyComponent } from './policy/policy.component';
     ClientComponent,
     SameClientsComponent,
     LoadComponent,
-    PolicyComponent
+    PolicyComponent,
+    ExamplesComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,

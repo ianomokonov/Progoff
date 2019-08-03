@@ -113,10 +113,23 @@ class DataBase {
         $s->CreateDate = date("Y/m/d H:00:00",strtotime($s->CreateDate));
         return $s;
     }
+    
+    public function getMaket($id){
+        $sth = $this->db->prepare("SELECT * FROM makets WHERE Id=?");
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'Maket');
+        $sth->execute(array($id));
+        return $sth->fetch();
+    }
 
     public function getTeam(){
         $sth = $this->db->query("SELECT * FROM mates");
         $sth->setFetchMode(PDO::FETCH_CLASS, 'Mate');
+        return $sth->fetchAll();
+    }
+    
+    public function getMakets(){
+        $sth = $this->db->query("SELECT * FROM makets");
+        $sth->setFetchMode(PDO::FETCH_CLASS, 'Maket');
         return $sth->fetchAll();
     }
 

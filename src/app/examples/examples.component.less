@@ -1,0 +1,25 @@
+@import "../team/team.component.less";
+@import "../about/about.component.less";
+.container-fluid{
+    display: flex;justify-content: center;
+}
+.mate{
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    img{
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    .btn{
+        position: absolute;
+        z-index: 10;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.089);
+        &:hover{
+            background-color: #fff;
+        }
+    }
+}

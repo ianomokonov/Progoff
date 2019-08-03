@@ -11,6 +11,8 @@ import { TeamComponent } from './team/team.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { AdvantagesComponent } from './advantages/advantages.component';
 import { PolicyComponent } from './policy/policy.component';
+import { ExamplesComponent } from './examples/examples.component';
+import { ExampleComponent } from './example/example.component';
 
 const aboutRouts: Routes = [
   { path: '', component: TeamComponent, pathMatch: 'full'},
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'sale-sets', component: SaleSetsComponent},
   { path: 'client/:id', component: ClientComponent },
   { path: 'policy', component: PolicyComponent},
+  { path: 'examples', component: ExamplesComponent},
+  { path: 'example/:id', component: ExampleComponent }
   //{ path: 'contacts', component: ContactsComponent}
 ];
 

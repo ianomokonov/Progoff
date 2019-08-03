@@ -32,6 +32,21 @@ if(isset($_GET['Key']))
         case 'get-sales':
             echo json_encode($ctxt->getSales());
             break;
+        case 'get-makets':
+            echo json_encode($ctxt->getMakets());
+            break;
+        case 'get-maket':
+            echo json_encode($ctxt->getMaket($_GET['Id']));
+            break;
+        //case 'set-names':
+        //    $basepath = 'Files/Makets';
+        //   $filelist = scandir($basepath);
+        //    foreach($filelist as $i => $filename) {
+        //        if($filename !== '.' && $filename !== '..') {
+        //             rename ($basepath.'/'.$filename, $basepath.'/'.$i.'.jpg');
+        //        }
+        //    }
+        //    break;
         // case 'upload-file':
         //     $inp = json_decode(file_get_contents('php://input'), true);
         //     echo json_encode(array($ctxt->uploadFile($_GET['Id'], $_FILES, $_GET['Type'])));
