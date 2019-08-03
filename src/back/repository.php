@@ -208,7 +208,21 @@ class DataBase {
             }
         }
         
+        $subject = "Новая заявка Progoff"; 
+            
+        $message = "<h2>".$app['Name']."</h2>
+        </br> <p>".$app['Description']."</p></br></br>
+        <p>Email: ".$app['Email']."</p> </br>";
         
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: Progoff <application@progoff.ru>\r\n";
+        mail('noledcorp@gmail.com', $subject, $message, $headers);
+        
+        $message = "<h2>Уважаемый, ".$app['Name']."!</h2>
+        </br> <p>Ваша заявка успешно отправлена и будет рассмотрена в ближайшее время.</p></br></br>
+        <p>C уважением, </p></br><p>Команда Progoff</p>";
+        
+        mail($app['Email'], $subject, $message, $headers);
         return $this->db->lastInsertId();
     }
 
