@@ -6,7 +6,7 @@ import { LoadService } from "./load.service";
 @Injectable()
 export class ClientService {
   makets = [];
-  baseUrl: string = "http://progoff.ru/progoff/";
+  baseUrl: string = "https://progoff.ru/progoff/";
   constructor(private http: HttpClient, private ls: LoadService) {}
 
   getClients() {
