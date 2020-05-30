@@ -1,13 +1,13 @@
-<div class="map">
+<div class="map" itemscope itemtype="http://schema.org/Organization">
   <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa360c090775fad4c0793202925046bedd6cf9e88113f11ed5c9d7cfcf442b67b&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
   <div class="contacts" [ngClass]="{'close-map':!showMap}">
     <div class="close-btn" (click)="closeMap()">
       <span>{{showMap?'скрыть':'показать контакты'}}</span>
     </div>
     <div class="pr-3 mr-3" >
-      <h3>Progoff</h3>
+      <h3 itemprop="name">Progoff</h3>
       <h2>Наши контакты</h2>
-      <h3 class="my-4"><a href="tel:+74955077479">+7(967)065-48-54</a></h3>
+      <h3 class="my-4"><a itemprop="telephone" href="tel:+74955077479">+7(967)065-48-54</a></h3>
       <div class="contact">
         <span>Адрес:</span>
         <p >Москва, ул. Щербаковская, 38</p>
@@ -19,7 +19,7 @@
       </div>
       <div class="contact">
         <span>Email:</span>
-        <a href="mailto:info@progoff.ru"><p style="color:black">info@progoff.ru</p></a>
+        <a href="mailto:info@progoff.ru"><p itemprop="email" style="color:black">info@progoff.ru</p></a>
       </div>
       
     </div>

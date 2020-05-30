@@ -5,56 +5,15 @@
       
     </div>
     <div class="prices" *ngIf="prices">
-      <div class="price" *ngFor="let p of prices; let i = index">
+      <div itemscope itemtype="http://schema.org/Offer" class="price" *ngFor="let p of prices; let i = index">
         <div class="image">
-          <img src="{{p.Image}}" [ngClass]="{'active': show[i]}">
+          <img itemprop="image" src="{{p.Image}}" [ngClass]="{'active': show[i]}">
         </div>
         <div class="values" [ngClass]="{'active': show[i]}">
-          <h3>{{p.Name}}</h3>
-          <span *ngFor="let s of p.Services">{{s.Name}}<br><b>от {{s.Price}} тыс. рублей</b></span>
-          <!-- <h3>Cоздание сайта</h3>
-          <span>Сайт визитка<br><b>от 20 тыс. рублей</b></span>
-          <span>Корпоративный сайт<br> <b>от 50 тыс. рублей</b></span>
-          <span>Интернет магазин<br> <b>от 50 тыс. рублей</b></span>
-          <span>Лэндинг-страница<br> <b>от 30 тыс. рублей</b></span> -->
+          <h3 itemprop="category">{{p.Name}}</h3>
+          <span *ngFor="let s of p.Services"><p class="d-inline m-0" itemprop="name">{{s.Name}}</p><br><b>от <p class="d-inline m-0" itemprop="price">{{s.Price}} тыс. рублей</p></b></span>
         </div>
       </div>
-      <!-- <div class="price">
-        <div class="image">
-          <img src="../../assets/images/prices/social-care.png" [ngClass]="{'active': show[1]}">
-        </div>
-        <div class="values" [ngClass]="{'active': show[1]}">
-          <h3>Поддержка сайта</h3>
-          <span>Сопровождение сайта<br> <b>от 5 тыс. рублей/мес</b></span>
-          <span>Копирайтинг<br><b>от 1 тыс. рублей</b></span>
-          <span>Наполнение контентом<br><b>от 10 тыс. рублей/мес.</b></span>
-          <span>Продвижение<br><b>от 15 тыс. рублей</b></span>
-        </div>
-      </div>
-      <div class="price">
-        <div class="image">
-          <img src="../../assets/images/prices/coding.png" [ngClass]="{'active': show[2]}">
-        </div>
-        <div class="values" [ngClass]="{'active': show[2]}">
-          <h3>Дизайн сайта</h3>
-          <span>Разработка логотипа<br> <b>от 5 тыс. рублей</b></span>
-          <span>Дизайн сайта<br> <b>от 15 тыс. рублей</b></span>
-          <span>Верстка макета<br> <b>2 тыс. рублей</b></span>
-        </div>
-      </div>
-      <div class="price">
-        <div class="image">
-          <img src="../../assets/images/prices/add.png" [ngClass]="{'active': show[3]}">
-        </div>
-        <div class="values" [ngClass]="{'active': show[3]}">
-          <h3>Дополнительные услуги</h3>
-          <span>Адаптация под мобильные устройства<br> <b>от 10 тыс. рублей</b></span>
-          <span>Анимирование сайта<br> <b>от 10 тыс. рублей</b></span>
-          <span>Мультиязычный сайт<br> <b>от 5 тыс. рублей</b></span>
-          <span>Чат на сайте<br> <b>от 8 тыс. рублей</b></span>
-          <span>Эксклюзивый сайт<br> <b>от 90 тыс. рублей</b></span>
-        </div>
-      </div> -->
     </div>
     <div class="head w-75 w-sm-50">
       <p>Ищите более выгодное предложение? У нас есть пакеты услуг по сниженным ценам, в которых сформированны наиболее популярные конфигурации проектов в современной сфере сайтостроения.</p>

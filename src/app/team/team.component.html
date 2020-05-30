@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="mate" [ngClass]="{'active':showp}" *ngFor="let m of team">
-    <div>
-      <h4>{{m.Name}}</h4>
-      <small>{{m.Position}}</small>
+    <div itemscope itemtype="http://schema.org/Person">
+      <h4 itemprop="name">{{m.Name}}</h4>
+      <small itemprop="jobTitle">{{m.Position}}</small>
       <div>
         <a *ngIf="m.VK" class="p-link" href="{{m.VK}}" target="blank"><i class="fab fa-vk"></i></a>
         <a *ngIf="m.Instagram"  class="p-link" href="{{m.Instagram}}" target="blank"><i class="fab fa-instagram"></i></a>

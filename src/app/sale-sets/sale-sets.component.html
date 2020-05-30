@@ -6,17 +6,17 @@
   </div>
  
   <div class="main-container">
-    <div class="card" *ngFor="let s of sales">
-      <img src="{{s.Image}}" class="card-img-top" alt="Пакет услуг">
+    <div itemscope itemtype="http://schema.org/Offer" class="card" *ngFor="let s of sales">
+      <img itemprop="image" src="{{s.Image}}" class="card-img-top" [alt]="s.Name">
       <div class="card-body">
-        <h5 class="card-title">{{s.Name}}</h5>
-        <p class="card-text">{{s.Description}}</p>
+        <h5 itemprop="name" class="card-title">{{s.Name}}</h5>
+        <p itemprop="description" class="card-text">{{s.Description}}</p>
         <h5>В пакет входят услуги:</h5>
         <ul>
-          <li *ngFor="let service of s.Services">{{service.Name}}</li>
+          <li itemprop="itemOffered" *ngFor="let service of s.Services">{{service.Name}}</li>
         </ul>
         <div class="d-flex align-items-center position-relative" style="overflow:hidden">
-            <span class="price">Цена: {{getPrice(s)}}₽</span>
+            <span itemprop="price" class="price">Цена: {{getPrice(s)}}₽</span>
             <a  class="btn btn-prog-light" (click)="ms.open('app', getAttachment(s))">Подать заявку</a>
             
         </div>
