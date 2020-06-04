@@ -10,7 +10,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
 //Модальные окна
-import { ModalModule, BsModalService } from 'ngx-bootstrap';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalComponent } from './modal/modal.component';
 import { ModalService } from './services/modal.service';
 

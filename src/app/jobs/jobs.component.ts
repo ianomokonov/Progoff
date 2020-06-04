@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Job, AttachmentType, Attachment } from '../services/models';
-import { fillProperties } from '@angular/core/src/util/property';
 import { ModalService } from '../services/modal.service';
 import { ClientService } from '../services/client.service';
 import { LoadService } from '../services/load.service';
