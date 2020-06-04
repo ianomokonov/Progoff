@@ -77,7 +77,7 @@ import { ExampleComponent } from './example/example.component';
     ExampleComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     ModalModule.forRoot(),

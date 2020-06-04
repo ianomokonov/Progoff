@@ -7,20 +7,20 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./home-page.component.less']
 })
 export class HomePageComponent implements OnInit {
-  show = false;
-  @HostListener('document:scroll', [])
-            onScroll(): void {
-              let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
-              if(y.height+(y.top-window.innerHeight*1.2)<0){
-                this.show=true;
-              }else{
-                this.show=false;
-              }
+  show = true;
+  // @HostListener('document:scroll', [])
+  //           onScroll(): void {
+  //             let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
+  //             if(y.height+(y.top-window.innerHeight*1.2)<0){
+  //               this.show=true;
+  //             }else{
+  //               this.show=false;
+  //             }
               
               
               
 
-            }
+  //           }
   constructor(public ms:ModalService) { }
 
   ngOnInit() {
