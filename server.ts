@@ -54,13 +54,3 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
 });
-
-const domino = require("domino");
-const fs = require("fs");
-const path = require("path");
-const template = fs
-  .readFileSync(path.join(__dirname, ".", "browser", "index.html"))
-  .toString();
-const win = domino.createWindow(template);
-global["window"] = win;
-global["document"] = win.document;

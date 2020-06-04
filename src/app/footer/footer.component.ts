@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 import { Router } from "@angular/router";
+import { WindowService } from "../window";
 
 @Component({
   selector: "app-footer",
@@ -8,20 +9,16 @@ import { Router } from "@angular/router";
 })
 export class FooterComponent implements OnInit {
   CurrentYear = new Date().getFullYear();
-  showMap = false;
-  @HostListener("document:scroll", [])
-  onScroll(): void {
-    let y = document.getElementsByClassName("map")[0].getBoundingClientRect()
-      .top;
-    if (window) {
-      if (y < window.innerHeight - 200) {
-        this.showMap = true;
-      }
-    } else {
-      this.showMap = true;
-    }
-  }
-  constructor(public router: Router) {}
+  showMap = true;
+  // @HostListener("document:scroll", [])
+  // onScroll(): void {
+  //   let y = document.getElementsByClassName("map")[0].getBoundingClientRect()
+  //     .top;
+  //   if (y < this.window.innerHeight - 200) {
+  //     this.showMap = true;
+  //   }
+  // }
+  constructor(public router: Router, private window: WindowService) {}
 
   ngOnInit() {}
 
@@ -31,8 +28,6 @@ export class FooterComponent implements OnInit {
 
   go(target: string) {
     this.router.navigate([target]);
-    if (window) {
-      window.scrollTo(0, 0);
-    }
+    this.window.scrollTo(0, 0);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ModalService } from '../services/modal.service';
+import { WindowService } from '../window';
 
 @Component({
   selector: 'home-page',
@@ -7,26 +8,22 @@ import { ModalService } from '../services/modal.service';
   styleUrls: ['./home-page.component.less']
 })
 export class HomePageComponent implements OnInit {
-  show = false;
-  @HostListener('document:scroll', [])
-            onScroll(): void {
-              let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
-              if(window){
-                if(y.height+(y.top-window.innerHeight*1.2)<0){
-                  this.show=true;
-                }else{
-                  this.show=false;
-                }
-              } else {
-                this.show=true;
-              }
+  show = true;
+  // @HostListener('document:scroll', [])
+  //           onScroll(): void {
+  //             let y = document.getElementsByClassName("section-container")[0].getBoundingClientRect();
+  //             if(y.height+(y.top-this.window.innerHeight*1.2)<0){
+  //               this.show=true;
+  //             }else{
+  //               this.show=false;
+  //             }
               
               
               
               
 
-            }
-  constructor(public ms:ModalService) { }
+  //           }
+  constructor(public ms:ModalService, private window: WindowService) { }
 
   ngOnInit() {
   }
