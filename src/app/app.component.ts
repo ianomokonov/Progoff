@@ -11,7 +11,6 @@ import { Title, Meta } from '@angular/platform-browser';
 export class AppComponent implements OnInit{
   constructor( private router:Router, private route: ActivatedRoute, private title: Title, private meta: Meta){
     
-    window.scrollTo(0, 0)
   }
   show = false;
   

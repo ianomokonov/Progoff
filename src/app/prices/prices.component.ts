@@ -15,9 +15,14 @@ export class PricesComponent implements OnInit {
             onScroll(): void {
               let y = document.getElementsByClassName("price");
               for(let i = 1; i<y.length; i++){
-                if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+                if(window){
+                  if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+                    this.show[i] = true;
+                  }
+                } else {
                   this.show[i] = true;
-                }
+                } 
+                
               }
               
             }
@@ -36,9 +41,13 @@ export class PricesComponent implements OnInit {
       },1);
       let y = document.getElementsByClassName("price");
       for(let i = 1; i<y.length; i++){
-        if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+        if(window){
+          if(y[i].getBoundingClientRect().top<window.innerHeight-100){
+            this.show[i] = true;
+          }
+        } else {
           this.show[i] = true;
-        }
+        } 
       }
     }) 
   }

@@ -1,25 +1,28 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from "@angular/core";
 
 @Component({
-  selector: 'main-about',
-  templateUrl: './main-about.component.html',
-  styleUrls: ['./main-about.component.less']
+  selector: "main-about",
+  templateUrl: "./main-about.component.html",
+  styleUrls: ["./main-about.component.less"],
 })
 export class MainAboutComponent implements OnInit {
   show = false;
-  @HostListener('document:scroll', [])
-            onScroll(): void {
-              let y = document.getElementsByClassName("about")[0].getBoundingClientRect().top;
-              if(Math.abs(y)<window.innerHeight-200){
-                this.show=true;
-              }else{
-                this.show=false;
-              }
-            }
-
-  constructor() { }
-
-  ngOnInit() {
+  @HostListener("document:scroll", [])
+  onScroll(): void {
+    let y = document.getElementsByClassName("about")[0].getBoundingClientRect()
+      .top;
+    if (window) {
+      if (Math.abs(y) < window.innerHeight - 200) {
+        this.show = true;
+      } else {
+        this.show = false;
+      }
+    } else {
+      this.show = true;
+    }
   }
 
+  constructor() {}
+
+  ngOnInit() {}
 }

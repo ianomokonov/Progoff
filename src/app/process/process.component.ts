@@ -38,8 +38,13 @@ export class ProcessComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.firstOffset = window.innerHeight-300;
-    window.scrollTo(0, 0)
+    if(window){
+      this.firstOffset = window.innerHeight-300;
+      window.scrollTo(0, 0)
+    } else {
+      this.firstOffset = 1000
+    } 
+    
     this.sum = 0;
     this.sizes.forEach(s => {
       this.sum+=s;
